@@ -1,0 +1,153 @@
+\documentclass[a4paper,12pt]{article}
+\usepackage[utf8]{inputenc}
+\usepackage[brazil]{babel}
+\usepackage[T1]{fontenc}
+\usepackage{lmodern}
+\usepackage{hyperref}
+\usepackage{graphicx}
+\usepackage{amsmath}
+\usepackage{geometry}
+\usepackage{listings}
+\usepackage{xcolor}
+
+\lstdefinestyle{pythonstyle}{
+    language=Python,
+    basicstyle=\ttfamily\small,
+    keywordstyle=\color{blue}\bfseries,
+    stringstyle=\color{teal},
+    commentstyle=\color{gray}\itshape,
+    showstringspaces=false,
+    numbers=left,
+    numberstyle=\tiny\color{gray},
+    stepnumber=1,
+    numbersep=8pt,
+    frame=single,
+    rulecolor=\color{black!30},
+    breaklines=true,
+    breakatwhitespace=true,
+    tabsize=4,
+    captionpos=b
+}
+\geometry{margin=2.5cm}
+
+\title{Detecção de Fraude em Transações \\ \large Relatório de Atividade}
+\author{Seu Nome \\ Matrícula: 0000000 \\ Disciplina XYZ}
+\date{\today}
+
+\begin{document}
+\maketitle
+\thispagestyle{empty}
+
+\newpage
+\tableofcontents
+\thispagestyle{empty}
+
+\newpage
+\pagenumbering{arabic}
+
+%----------------------------------------
+\section{Introdução}
+\label{sec:introducao}
+\begin{itemize}
+  \item Contextualização do problema de detecção de fraude
+  \item Objetivos do trabalho
+  \item Descrição do dataset (fonte, número de amostras, desbalanceamento)
+\end{itemize}
+
+%----------------------------------------
+\section{Metodologia (Parte Prática)}
+\label{sec:metodologia}
+
+\subsection{Análise Exploratório de Dados (EDA) e Pré-processamento}
+\label{subsec:eda}
+\begin{itemize}
+  \item Estatísticas descritivas e visualização das distribuições
+  \item Tratamento de valores ausentes, codificações e escalonamento
+  \item Estratégia para lidar com desbalanceamento
+\end{itemize}
+
+\subsection{Abordagem 1: Modelagem da Classe Normal (Detecção de Anomalia)}
+\label{subsec:abordagem1}
+\begin{itemize}
+  \item Escolha do modelo generativo probabilístico
+  \item Estimação de parâmetros via MLE
+  \item Cálculo do score de anomalia
+  \item Visualização das distribuições de scores
+  \item Seleção e justificativa do limiar
+\end{itemize}
+
+\subsection{Abordagem 2: Classificação Supervisionada}
+\label{subsec:abordagem2}
+\begin{itemize}
+  \item Treinamento de modelo probabilístico
+  \item Geração de probabilidades $p(C_{\text{fraude}}\mid x)$
+  \item Visualização das distribuições de probabilidade
+  \item Escolha do limiar e justificativa
+\end{itemize}
+
+\subsection{Validação e Generalização}
+\label{subsec:validacao}
+\begin{itemize}
+  \item Estratégia de validação (cross-validation, hold-out)
+  \item Seleção de modelo e otimização de hiperparâmetros
+\end{itemize}
+
+%----------------------------------------
+\section{Resultados}
+\label{sec:resultados}
+\begin{itemize}
+  \item Métricas independentes de limiar: AUC-PR
+  \item Métricas dependentes de limiar: Precisão, Recall, F1, matriz de confusão
+  \item Gráficos de curva PR e distribuição de scores/probabilidades
+\end{itemize}
+
+%----------------------------------------
+\section{Discussão e Comparação Final}
+\label{sec:discussao}
+\begin{itemize}
+  \item Comparação de performance entre as abordagens
+  \item Vantagens, desvantagens e limitações
+  \item Impacto prático da escolha de limiares
+  \item Recomendações de uso
+\end{itemize}
+
+%----------------------------------------
+\section{Conclusão}
+\label{sec:conclusao}
+\begin{itemize}
+  \item Principais achados
+  \item Sugestões de trabalhos futuros
+\end{itemize}
+
+%----------------------------------------
+\section{Respostas Teórico-Conceituais (Parte 2)}
+\label{sec:teoria}
+
+\subsection{Exercício 1: Fronteira de decisão em modelos generativos}
+\label{subsec:ex1}
+
+\subsection{Exercício 2: Verossimilhança, entropia cruzada e regressão logística}
+\label{subsec:ex2}
+
+\subsection{Exercício 3: Decomposição viés-variância}
+\label{subsec:ex3}
+
+\subsection{Exercício 4: Avaliação em dados desbalanceados}
+\label{subsec:ex4}
+
+%----------------------------------------
+\section{Referências}
+\label{sec:referencias}
+% Exemplo de uso de BibTeX:
+% \bibliographystyle{ieeetr}
+% \bibliography{referencias}
+
+\begin{thebibliography}{9}
+  \bibitem{scikit-learn}
+    Pedregosa et al.,
+    \emph{Scikit-learn: Machine Learning in Python},
+    JMLR, 2011.
+  % adicione outras referências conforme necessário
+\end{thebibliography}
+
+\end{document}
