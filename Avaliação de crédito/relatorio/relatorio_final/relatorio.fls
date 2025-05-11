@@ -130,6 +130,10 @@ INPUT C:\Users\Julio Vinicius\AppData\Local\Programs\MiKTeX\tex\latex\graphics-c
 INPUT C:\Users\Julio Vinicius\AppData\Local\Programs\MiKTeX\tex\latex\graphics\mathcolor.ltx
 INPUT C:\Users\Julio Vinicius\AppData\Local\Programs\MiKTeX\tex\latex\graphics\mathcolor.ltx
 INPUT C:\Users\Julio Vinicius\AppData\Local\Programs\MiKTeX\tex\latex\graphics\mathcolor.ltx
+INPUT C:\Users\Julio Vinicius\AppData\Local\Programs\MiKTeX\tex\latex\booktabs\booktabs.sty
+INPUT C:\Users\Julio Vinicius\AppData\Local\Programs\MiKTeX\tex\latex\booktabs\booktabs.sty
+INPUT C:\Users\Julio Vinicius\AppData\Local\Programs\MiKTeX\tex\latex\float\float.sty
+INPUT C:\Users\Julio Vinicius\AppData\Local\Programs\MiKTeX\tex\latex\float\float.sty
 INPUT C:\Users\Julio Vinicius\AppData\Local\Programs\MiKTeX\tex\latex\lm\t1lmr.fd
 INPUT C:\Users\Julio Vinicius\AppData\Local\Programs\MiKTeX\tex\latex\lm\t1lmr.fd
 INPUT C:\Users\Julio Vinicius\AppData\Local\Programs\MiKTeX\tex\latex\lm\t1lmr.fd
@@ -203,13 +207,56 @@ INPUT C:\Users\Julio Vinicius\AppData\Local\Programs\MiKTeX\tex\latex\lm\ts1lmr.
 INPUT C:\Users\Julio Vinicius\AppData\Local\Programs\MiKTeX\tex\latex\lm\ts1lmr.fd
 INPUT C:\Users\Julio Vinicius\AppData\Local\Programs\MiKTeX\fonts\tfm\public\lm\ts1-lmr12.tfm
 INPUT C:\Users\Julio Vinicius\AppData\Local\Programs\MiKTeX\fonts\tfm\public\lm\ec-lmbx12.tfm
-INPUT C:\Users\Julio Vinicius\AppData\Local\Programs\MiKTeX\fonts\tfm\public\lm\ec-lmr8.tfm
-INPUT C:\Users\Julio Vinicius\AppData\Local\Programs\MiKTeX\fonts\tfm\public\lm\ec-lmr6.tfm
+INPUT C:\Users\Julio Vinicius\AppData\Local\Programs\MiKTeX\tex\latex\lm\t1lmtt.fd
+INPUT C:\Users\Julio Vinicius\AppData\Local\Programs\MiKTeX\tex\latex\lm\t1lmtt.fd
+INPUT C:\Users\Julio Vinicius\AppData\Local\Programs\MiKTeX\tex\latex\lm\t1lmtt.fd
+INPUT C:\Users\Julio Vinicius\AppData\Local\Programs\MiKTeX\fonts\tfm\public\lm\ec-lmtt12.tfm
+INPUT ..\output\proporcao_dados.png
+INPUT ..\output\proporcao_dados.png
+INPUT ..\output\proporcao_dados.png
+INPUT ..\output\proporcao_dados.png
+INPUT ..\output\proporcao_dados.png
+INPUT ..\output\proporcao_dados.png
+INPUT ..\output\proporcao_dados.png
 INPUT C:\Users\Julio Vinicius\AppData\Local\Programs\MiKTeX\fonts\enc\dvips\lm\lm-ts1.enc
+INPUT ..\output\matriz de confusao maximo f1.png
+INPUT ..\output\matriz de confusao maximo f1.png
+INPUT ..\output\matriz de confusao maximo f1.png
+INPUT ..\output\matriz de confusao maximo f1.png
+INPUT ..\output\matriz de confusao maximo f1.png
+INPUT ..\output\matriz de confusao maximo f1.png
+INPUT ..\output\matriz de confusao maximo f1.png
+INPUT ..\output\matriz de confusao sem threshold regressao logistica.png
+INPUT ..\output\matriz de confusao sem threshold regressao logistica.png
+INPUT ..\output\matriz de confusao sem threshold regressao logistica.png
+INPUT ..\output\matriz de confusao sem threshold regressao logistica.png
+INPUT ..\output\matriz de confusao sem threshold regressao logistica.png
+INPUT ..\output\matriz de confusao sem threshold regressao logistica.png
+INPUT ..\output\matriz de confusao sem threshold regressao logistica.png
+INPUT ..\output\matriz de confusao com threshold regressao logistica.png
+INPUT ..\output\matriz de confusao com threshold regressao logistica.png
+INPUT ..\output\matriz de confusao com threshold regressao logistica.png
+INPUT ..\output\matriz de confusao com threshold regressao logistica.png
+INPUT ..\output\matriz de confusao com threshold regressao logistica.png
+INPUT ..\output\matriz de confusao com threshold regressao logistica.png
+INPUT ..\output\matriz de confusao com threshold regressao logistica.png
+INPUT ..\output\matriz confusao lgbm.png
+INPUT ..\output\matriz confusao lgbm.png
+INPUT ..\output\matriz confusao lgbm.png
+INPUT ..\output\matriz confusao lgbm.png
+INPUT ..\output\matriz confusao lgbm.png
+INPUT ..\output\matriz confusao lgbm.png
+INPUT ..\output\matriz confusao lgbm.png
 INPUT C:\Users\Julio Vinicius\AppData\Local\Programs\MiKTeX\fonts\enc\dvips\lm\lm-mathit.enc
 INPUT C:\Users\Julio Vinicius\AppData\Local\Programs\MiKTeX\fonts\enc\dvips\lm\lm-rm.enc
 INPUT C:\Users\Julio Vinicius\AppData\Local\Programs\MiKTeX\fonts\enc\dvips\lm\lm-mathsy.enc
-INPUT C:\Users\Julio Vinicius\AppData\Local\Programs\MiKTeX\fonts\tfm\public\lm\ec-lmri12.tfm
+INPUT ..\output\distribuicao scores lgbm.png
+INPUT ..\output\distribuicao scores lgbm.png
+INPUT ..\output\distribuicao scores lgbm.png
+INPUT ..\output\distribuicao scores lgbm.png
+INPUT ..\output\distribuicao scores lgbm.png
+INPUT ..\output\distribuicao scores lgbm.png
+INPUT ..\output\distribuicao scores lgbm.png
 INPUT relatorio.aux
 INPUT .\relatorio.out
 INPUT .\relatorio.out
@@ -221,9 +268,7 @@ INPUT C:\Users\Julio Vinicius\AppData\Local\Programs\MiKTeX\fonts\type1\public\l
 INPUT C:\Users\Julio Vinicius\AppData\Local\Programs\MiKTeX\fonts\type1\public\lm\lmr12.pfb
 INPUT C:\Users\Julio Vinicius\AppData\Local\Programs\MiKTeX\fonts\type1\public\lm\lmr17.pfb
 INPUT C:\Users\Julio Vinicius\AppData\Local\Programs\MiKTeX\fonts\type1\public\lm\lmr17.pfb
-INPUT C:\Users\Julio Vinicius\AppData\Local\Programs\MiKTeX\fonts\type1\public\lm\lmr8.pfb
-INPUT C:\Users\Julio Vinicius\AppData\Local\Programs\MiKTeX\fonts\type1\public\lm\lmr8.pfb
-INPUT C:\Users\Julio Vinicius\AppData\Local\Programs\MiKTeX\fonts\type1\public\lm\lmri12.pfb
-INPUT C:\Users\Julio Vinicius\AppData\Local\Programs\MiKTeX\fonts\type1\public\lm\lmri12.pfb
 INPUT C:\Users\Julio Vinicius\AppData\Local\Programs\MiKTeX\fonts\type1\public\lm\lmsy10.pfb
 INPUT C:\Users\Julio Vinicius\AppData\Local\Programs\MiKTeX\fonts\type1\public\lm\lmsy10.pfb
+INPUT C:\Users\Julio Vinicius\AppData\Local\Programs\MiKTeX\fonts\type1\public\lm\lmtt12.pfb
+INPUT C:\Users\Julio Vinicius\AppData\Local\Programs\MiKTeX\fonts\type1\public\lm\lmtt12.pfb

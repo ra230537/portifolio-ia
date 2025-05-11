@@ -9,7 +9,8 @@
 \usepackage{geometry}
 \usepackage{listings}
 \usepackage{xcolor}
-
+\usepackage{booktabs}
+\usepackage{float}
 \lstdefinestyle{pythonstyle}{
     language=Python,
     basicstyle=\ttfamily\small,
@@ -30,8 +31,8 @@
 }
 \geometry{margin=2.5cm}
 
-\title{Detecção de Fraude em Transações \\ \large Relatório de Atividade}
-\author{Seu Nome \\ Matrícula: 0000000 \\ Disciplina XYZ}
+\title{Atividade 1 Aprendizado Supervisionado \\ \large Relatório de Atividade}
+\author{Julio Vinicius Amaral Oliveira \\ Matrícula: 230537 \\ Disciplina: MO432 \\ Professor: Marcos M. Raimundo}
 \date{\today}
 
 \begin{document}
@@ -49,9 +50,8 @@
 \section{Introdução}
 \label{sec:introducao}
 \begin{itemize}
-  \item Contextualização do problema de detecção de fraude
-  \item Objetivos do trabalho
-  \item Descrição do dataset (fonte, número de amostras, desbalanceamento)
+  \item O objetivo do trabalho é aplicar técnicas básicas de aprendizado supervisionado para detectar fraudes em transações financeiras. O trabalho foi dividido em duas partes: a primeira parte vamos implementar dois modelos de detecção de fraude, enquanto a segunda parte resolveremos algumas questões teóricas relacionadas ao aprendizado supervisionado.
+  \item O dataset utilizado é o Credit Card Fraud Detection. Ele possui transações realizadas com cartões de crédito em setembro de 2013. O conjunto de dados tem a maioria de suas features anonimizadas, com exceção de algumas variáveis como: tempo, valor da transação e a variável que indica se a transação é fraude ou não. Uma característica bem importante desse datasete é que ele é muito desbalanceado, com apenas 0.172\% das transações sendo fraudes.
 \end{itemize}
 
 %----------------------------------------
@@ -60,64 +60,171 @@
 
 \subsection{Análise Exploratório de Dados (EDA) e Pré-processamento}
 \label{subsec:eda}
-\begin{itemize}
-  \item Estatísticas descritivas e visualização das distribuições
-  \item Tratamento de valores ausentes, codificações e escalonamento
-  \item Estratégia para lidar com desbalanceamento
-\end{itemize}
-
+  Como dito anteriormente, o dataset é bastante desbalanceado, o primeiro passo realizado foi verificar a quantidade de fraudes e não fraudes utilizando o método \texttt{value\_counts()} do pandas. Obtendo o seguinte resultado:
+  \begin{figure}[H]
+    \centering
+    \includegraphics[width=0.8\textwidth]{../output/proporcao_dados.png}
+    \caption{Proporção de fraudes e não fraudes no dataset}
+    \label{fig:proporcao_dados}
+  \end{figure}
+  Após isso, procuramos entender como as features se relacionavam com a coluna de Class, que era nossa coluna alvo. Então usamos o método \texttt{corr()} do pandas, buscando a correlação entre Class e o restante das features. obtendo o seguinte resultado para as features com maior correlação absoluta:
+  \begin{table}[H]
+    \centering
+    \begin{tabular}{lr}
+        \toprule
+        \textbf{Feature} & \textbf{Correlação com Class} \\
+        \midrule
+        V17    & -0.326481 \\
+        V14    & -0.302544 \\
+        V12    & -0.260593 \\
+        V10    & -0.216883 \\
+        V16    & -0.196539 \\
+        V3     & -0.192961 \\
+        V7     & -0.187257 \\
+        \bottomrule
+    \end{tabular}
+    \caption{Correlação das features com Class}
+    \label{tab:correlacao_features}
+\end{table}
 \subsection{Abordagem 1: Modelagem da Classe Normal (Detecção de Anomalia)}
 \label{subsec:abordagem1}
-\begin{itemize}
-  \item Escolha do modelo generativo probabilístico
-  \item Estimação de parâmetros via MLE
-  \item Cálculo do score de anomalia
-  \item Visualização das distribuições de scores
-  \item Seleção e justificativa do limiar
-\end{itemize}
-
+  Para a primeira abordagem utilizamos o modelo de detecção de anomalias. Primeiramente, separamos apenas as 3 features mais relevantes para o modelo, esse número foi escolhido com base na performance do modelo. Foi percebido que ao diminuir cada vez mais o número de features tanto a medida de AUC-PR quanto a matriz de confusão resultavam em valores melhores. Após isso, separamos 2000 transações normais, e com o StandartScaler aplicamos uma normalização para esses dados. Depois aplicamos a normalização para o conjunto inteiro de dados (Com exceção da coluna Class). Após isso, tentamos encontrar o melhor valor de bandwith usando o método \texttt{GridSearchCV} do sklearn. O melhor valor encontrado foi 0.479, e com isso aplicamos um KDE e calculamos o score de anomalias.
+\begin{table}[H]
+    \centering
+  \begin{minipage}{0.48\textwidth}
+      \centering
+      \begin{tabular}{lrr}
+          \toprule
+          & \textbf{anomaly\_score} & \textbf{true\_class} \\
+          \midrule
+          count & 284315.000000 & 284315.0 \\
+          mean & 3.818309 & 0.0 \\
+          std & 4.005647 & 0.0 \\
+          min & 2.346846 & 0.0 \\
+          25\% & 2.822756 & 0.0 \\
+          50\% & 3.311860 & 0.0 \\
+          75\% & 4.210312 & 0.0 \\
+          max & 557.518645 & 0.0 \\
+          \bottomrule
+      \end{tabular}
+      \caption{Transações normais}
+      \label{tab:score_anomalia_normal}
+  \end{minipage}\hfill
+  \begin{minipage}{0.48\textwidth}
+      \centering
+      \begin{tabular}{lrr}
+          \toprule
+          & \textbf{anomaly\_score} & \textbf{true\_class} \\
+          \midrule
+          count & 492.000000 & 492.0 \\
+          mean & 162.766740 & 1.0 \\
+          std & 250.679879 & 0.0 \\
+          min & 2.780611 & 1.0 \\
+          25\% & 26.711496 & 1.0 \\
+          50\% & 68.714390 & 1.0 \\
+          75\% & 156.108730 & 1.0 \\
+          max & 1377.747682 & 1.0 \\
+          \bottomrule
+      \end{tabular}
+      \caption{Transações fraudulentas}
+      \label{tab:score_anomalia_fraude}
+  \end{minipage}
+\end{table}
+Apos isso, tentamos encontrar o melhor limiar para separar as transações, utilizamos o método precision\_recall\_curve do sklearn, e encontramos o melhor limiar para maximizar f1 sendo 34.9 Com isso, conseguimos os seguintes resultados após plotar a matriz de confusão:
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.8\textwidth]{../output/matriz de confusao maximo f1.png}
+    \caption{Matriz de confusão}
+    \label{fig:matriz_confusao}
+\end{figure}
+Segundo o próprio repositório do Kaggle, a matriz de confusão não é o melhor indicador de desempenho quando temos classes desbalanceadas e nesses casos é recomendado o uso da área abaixo da curva de precision-recall. Cujo resultado foi de 0.623
 \subsection{Abordagem 2: Classificação Supervisionada}
 \label{subsec:abordagem2}
-\begin{itemize}
-  \item Treinamento de modelo probabilístico
-  \item Geração de probabilidades $p(C_{\text{fraude}}\mid x)$
-  \item Visualização das distribuições de probabilidade
-  \item Escolha do limiar e justificativa
-\end{itemize}
-
-\subsection{Validação e Generalização}
+  Nessa segunda abordagem utilizamos um modelo de regressão logística, utilizamos o método train\_test\_split do sklearn para separar 80\% dos dados para treino e 20\% para teste, isso foi realizado nos dados já normalizado com a ajuda do StandartScaler. Após isso, aplicamos o modelo de regressão logística e aplicamos o modelo nos dados de testes, obtendo a seguinte AUC-PR: 0.742, que foi um valor muito maior do que o obtido na primeira abordagem. Para ilustrar também o resultado, plotamos a matriz de confusão:
+  \begin{table}[H]
+      \centering
+      \begin{tabular}{lcccccc}
+          \toprule
+          & \textbf{Classe 0} & \textbf{Classe 1} & \textbf{Acurácia} & \textbf{Média Macro} & \textbf{Média Ponderada} \\
+          \midrule
+          Precision   & 0.999 & 0.829 & 0.999 & 0.914 & 0.999 \\
+          Recall     & 1.0 & 0.643 & 0.999 & 0.821 & 0.999 \\
+          F1-score               & 1.0 & 0.724 & 0.999 & 0.862 & 0.999 \\
+          Support      & 56864    & 98       & 0.999 & 56962    & 56962    \\
+          \bottomrule
+      \end{tabular}
+      \caption{Métricas de avaliação do modelo para as classes 0 (normal) e 1 (fraude)}
+      \label{tab:metricas_classificacao}
+  \end{table}
+  \begin{figure}[H]
+    \centering
+    \includegraphics[width=0.8\textwidth]{../output/matriz de confusao sem threshold regressao logistica.png}
+    \caption{Matriz de confusão regressão logística}
+    \label{fig:matriz_confusao_regressao_logistica}
+  \end{figure}
+  Para melhorar ainda mais o resultado, resolvemos encontrar um threshold utilizando o método \texttt{precision\_recall\_curve} do sklearn, e ao fazer isso encontramos um valor melhor de recall, entretanto o valor da precision diminuiu um pouco. Mas dado o contexto que o modelo deveria ser usado, ter um recall alto é melhor pois evita perdas financeiras para a empresa que utiliza o modelo, o valores obtidos foram
+  \begin{table}[H]
+    \centering
+    \begin{tabular}{lccccc}
+        \toprule
+                           & \textbf{Classe 0} & \textbf{Classe 1} & \textbf{Acurácia} & \textbf{Média Macro} & \textbf{Média Ponderada} \\
+        \midrule
+        Precision  & 0.999  & 0.692  & 0.999  & 0.846  & 0.999   \\
+        Recall     & 0.999  & 0.827  & 0.999  & 0.913  & 0.999   \\
+        F1-score   & 1.000  & 0.753  & 0.999  & 0.877  & 0.999   \\
+        Support    & 56864  & 98     & 56962  & 56962  & 56962   \\
+        \bottomrule
+    \end{tabular}
+    \caption{Métricas de avaliação do modelo (valores aproximados para 3 casas decimais)}
+    \label{tab:matriz_confusao_regressao_logistica_com_threshold}
+\end{table}
+  \begin{figure}[H]
+    \centering
+    \includegraphics[width=0.8\textwidth]{../output/matriz de confusao com threshold regressao logistica.png}
+    \caption{Matriz de confusão regressão logística}
+    \label{fig:matriz_confusao_regressao_logistica_com_threshold}
+  \end{figure}
+\subsection{Uso de LGBM}
 \label{subsec:validacao}
-\begin{itemize}
-  \item Estratégia de validação (cross-validation, hold-out)
-  \item Seleção de modelo e otimização de hiperparâmetros
-\end{itemize}
-
+Ao utilizar o modelo LGBM, obtivemos um resultado muito superior aos anteriores. Calculamos os scores utilizando o \texttt{predict\_proba} e ajustamos o threshold para maximizar o F1-score. Os thresholds, precision e recall foram encontrados utilizando o método \texttt{precision\_recall\_curve} e calculamos o F1 através da fórmula:
+\begin{equation}
+    F1 = \frac{2 \cdot (precision \cdot recall)}{precision + recall}
+\end{equation}
+Seguem os resultados de precisão, recall e F1-score:
+\begin{table}[H]
+    \centering
+    \begin{tabular}{lccccc}
+        \toprule
+    & \textbf{0} & \textbf{1} & \textbf{Accuracy} & \textbf{macro avg} & \textbf{weighted avg} \\
+        \midrule
+        Precision  & 1.000 & 0.936 & 1.000 & 0.968 & 1.000 \\
+        Recall     & 1.000 & 0.829 & 1.000 & 0.915 & 1.000 \\
+        F1‐score   & 1.000 & 0.879 & 1.000 & 0.940 & 1.000 \\
+        Support    & 71079 & 123   & 1.000 & 71202 & 71202  \\
+        \bottomrule
+    \end{tabular}
+    \caption{Métricas de avaliação do modelo LGBM}
+    \label{tab:metricas_lgbm}
+\end{table}
+  \begin{figure}[H]
+    \centering
+    \includegraphics[width=0.8\textwidth]{../output/matriz confusao lgbm.png}
+    \label{fig:matriz_confusao_lgbm}
+  \end{figure}
+Também calculamos a AUC-PR, que foi de 0.8585
+A utilização do LGBM trouxe uma distribuição muito heterogênea entre os scores, oque pode ser visto na figura \ref{fig:distribuicao_scores_lgbm}. Enquanto os scores de dados normais se concentram em torno de 0, os scores de dados fraudulentos se concentram em torno de 1, mostrando que o LGBM conseguiu separar bem as classes.
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.8\textwidth]{../output/distribuicao scores lgbm.png}
+    \caption{Distribuição dos scores do modelo LGBM}
+    \label{fig:distribuicao_scores_lgbm}
+\end{figure}
 %----------------------------------------
-\section{Resultados}
-\label{sec:resultados}
-\begin{itemize}
-  \item Métricas independentes de limiar: AUC-PR
-  \item Métricas dependentes de limiar: Precisão, Recall, F1, matriz de confusão
-  \item Gráficos de curva PR e distribuição de scores/probabilidades
-\end{itemize}
-
-%----------------------------------------
-\section{Discussão e Comparação Final}
-\label{sec:discussao}
-\begin{itemize}
-  \item Comparação de performance entre as abordagens
-  \item Vantagens, desvantagens e limitações
-  \item Impacto prático da escolha de limiares
-  \item Recomendações de uso
-\end{itemize}
 
 %----------------------------------------
 \section{Conclusão}
 \label{sec:conclusao}
-\begin{itemize}
-  \item Principais achados
-  \item Sugestões de trabalhos futuros
-\end{itemize}
+A primeira abordagem, que utilizou o modelo de detecção de anomalias, obteve um resultado de AUC-PR de 0.623, enquanto a segunda abordagem, que utilizou o modelo de regressão logística, obteve um resultado de AUC-PR de 0.742. Por fim, a terceira abordagem, que utilizou o modelo LGBM, obteve um resultado de AUC-PR de 0.8585. Isso mostra que o modelo LGBM foi o mais eficaz para detectar fraudes no dataset. Deve-se levar em conta também, que na primeira abordagem, o resultado só foi tão alto, devido ao fato de que reduzimos consideravelmente a quantidade de features, pois em testes prévios, ao utilizar todas as features, os resultados eram muito ruins, com AUC-PR próximos de 0.1. A abordagem 2 pareceu melhor, tanto em questão de resultado quanto em questão de performance, já que para realizar a abordagem 1, tivemos que separar um conjunto inferior de dados, utilizar menos features para chegar em um resultado minimamente aceitável. Já na abordagem 2, utilizamos todas as features e mesmo assim chegamos em um resultado muito bom. Quanto a escolha do limiar, utilizamos o método \texttt{precision\_recall\_curve} para encontrar o F1 com maior valor, em um cenário real, talvez o ideal fosse utilizar um limiar que favorecesse ainda mais o recall, dado que estamos lidando com fraudes que podem significar perda financeira para uma empresa, mas ao mesmo tempo é importante considerar que um modelo que tem uma precisão baixa pode causar problemas tanto para clientes que possam ter transações bloqueadas, causando insatisfação quanto para um time que precisará investigar essas transações.
 
 %----------------------------------------
 \section{Respostas Teórico-Conceituais (Parte 2)}
@@ -141,13 +248,50 @@
 % Exemplo de uso de BibTeX:
 % \bibliographystyle{ieeetr}
 % \bibliography{referencias}
+\appendix
+\section{Correlação das Features com Class}
+\label{apendice:correlacao}
 
-\begin{thebibliography}{9}
-  \bibitem{scikit-learn}
-    Pedregosa et al.,
-    \emph{Scikit-learn: Machine Learning in Python},
-    JMLR, 2011.
-  % adicione outras referências conforme necessário
-\end{thebibliography}
+\begin{table}[H]
+    \centering
+    \begin{tabular}{lr}
+        \toprule
+        \textbf{Feature} & \textbf{Correlação com Class} \\
+        \midrule
+        V17    & -0.326481 \\
+        V14    & -0.302544 \\
+        V12    & -0.260593 \\
+        V10    & -0.216883 \\
+        V16    & -0.196539 \\
+        V3     & -0.192961 \\
+        V7     & -0.187257 \\
+        V11    &  0.154876 \\
+        V4     &  0.133447 \\
+        V18    & -0.111485 \\
+        V1     & -0.101347 \\
+        V9     & -0.097733 \\
+        V5     & -0.094974 \\
+        V2     &  0.091289 \\
+        V6     & -0.043643 \\
+        V21    &  0.040413 \\
+        V19    &  0.034783 \\
+        V20    &  0.020090 \\
+        V8     &  0.019875 \\
+        V27    &  0.017580 \\
+        Time   & -0.012323 \\
+        V28    &  0.009536 \\
+        V24    & -0.007221 \\
+        Amount &  0.005632 \\
+        V13    & -0.004570 \\
+        V26    &  0.004455 \\
+        V15    & -0.004223 \\
+        V25    &  0.003308 \\
+        V23    & -0.002685 \\
+        V22    &  0.000805 \\
+        \bottomrule
+    \end{tabular}
+    \caption{Correlação das features com a variável Class}
+    \label{tab:correlacao_features_completa}
+\end{table}
 
 \end{document}
