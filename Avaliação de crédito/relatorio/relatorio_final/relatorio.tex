@@ -1,17 +1,17 @@
 \documentclass[conference]{IEEEtran}
 \IEEEoverridecommandlockouts
-% \usepackage[utf8]{inputenc}
-% \usepackage[brazil]{babel}
-% \usepackage[T1]{fontenc}
-% \usepackage{lmodern}
+\usepackage[utf8]{inputenc}
+\usepackage[brazil]{babel}
+\usepackage[T1]{fontenc}
+\usepackage{lmodern}
 \usepackage{hyperref}
 \usepackage{graphicx}
 \usepackage{amsmath}
 \usepackage{amssymb}
-% \usepackage{geometry}
+\usepackage{geometry}
 \usepackage{listings}
 \usepackage{xcolor}
-% \usepackage{booktabs}
+\usepackage{booktabs}
 \usepackage{float}
 
 \usepackage{cite}
@@ -20,48 +20,45 @@
 \usepackage{graphicx}
 \usepackage{textcomp}
 \usepackage{xcolor}
-\lstdefinestyle{pythonstyle}{
-    language=Python,
-    basicstyle=\ttfamily\small,
-    keywordstyle=\color{blue}\bfseries,
-    stringstyle=\color{teal},
-    commentstyle=\color{gray}\itshape,
-    showstringspaces=false,
-    numbers=left,
-    numberstyle=\tiny\color{gray},
-    stepnumber=1,
-    numbersep=8pt,
-    frame=single,
-    rulecolor=\color{black!30},
-    breaklines=true,
-    breakatwhitespace=true,
-    tabsize=4,
-    captionpos=b
-}
-\geometry{margin=2.5cm}
-
-\title{Atividade 1 Aprendizado Supervisionado \\ \large Relatório de Atividade}
-\author{Julio Vinicius Amaral Oliveira \\ Matrícula: 230537 \\ Disciplina: MO432 \\ Professor: Marcos M. Raimundo}
-\date{\today}
-
 \begin{document}
+
+% \lstdefinestyle{pythonstyle}{
+%     language=Python,
+%     basicstyle=\ttfamily\small,
+%     keywordstyle=\color{blue}\bfseries,
+%     stringstyle=\color{teal},
+%     commentstyle=\color{gray}\itshape,
+%     showstringspaces=false,
+%     numbers=left,
+%     numberstyle=\tiny\color{gray},
+%     stepnumber=1,
+%     numbersep=8pt,
+%     frame=single,
+%     rulecolor=\color{black!30},
+%     breaklines=true,
+%     breakatwhitespace=true,
+%     tabsize=4,
+%     captionpos=b
+% }
+% \geometry{margin=2.5cm}
+
+\title{Atividade 1 Aprendizado Supervisionado: Relatório de Atividade}
+
+\author{
+\IEEEauthorblockN{Julio Vinicius Amaral Oliveira}
+\IEEEauthorblockA{Universidade Estadual de Campinas (UNICAMP)\\
+julio@email.com}
+}
+
 \maketitle
-\thispagestyle{empty}
-
-\newpage
-\tableofcontents
-\thispagestyle{empty}
-
-\newpage
-\pagenumbering{arabic}
+\begin{abstract}
+O objetivo do trabalho é aplicar técnicas básicas de aprendizado supervisionado para detectar fraudes em transações financeiras. O trabalho foi dividido em duas partes: a primeira parte vamos implementar dois modelos de detecção de fraude, enquanto a segunda parte resolveremos algumas questões teóricas relacionadas ao aprendizado supervisionado.
+\end{abstract}
 
 %----------------------------------------
 \section{Introdução}
 \label{sec:introducao}
-\begin{itemize}
-  \item O objetivo do trabalho é aplicar técnicas básicas de aprendizado supervisionado para detectar fraudes em transações financeiras. O trabalho foi dividido em duas partes: a primeira parte vamos implementar dois modelos de detecção de fraude, enquanto a segunda parte resolveremos algumas questões teóricas relacionadas ao aprendizado supervisionado.
-  \item O dataset utilizado é o Credit Card Fraud Detection. Ele possui transações realizadas com cartões de crédito em setembro de 2013. O conjunto de dados tem a maioria de suas features anonimizadas, com exceção de algumas variáveis como: tempo, valor da transação e a variável que indica se a transação é fraude ou não. Uma característica bem importante desse datasete é que ele é muito desbalanceado, com apenas 0.172\% das transações sendo fraudes.
-\end{itemize}
+  O dataset utilizado é o Credit Card Fraud Detection. Ele possui transações realizadas com cartões de crédito em setembro de 2013. O conjunto de dados tem a maioria de suas features anonimizadas, com exceção de algumas variáveis como: tempo, valor da transação e a variável que indica se a transação é fraude ou não. Uma característica bem importante desse datasete é que ele é muito desbalanceado, com apenas 0.172\% das transações sendo fraudes. 
 
 %----------------------------------------
 \section{Metodologia (Parte Prática)}
@@ -71,78 +68,74 @@
 \label{subsec:eda}
   Como dito anteriormente, o dataset é bastante desbalanceado, o primeiro passo realizado foi verificar a quantidade de fraudes e não fraudes utilizando o método \texttt{value\_counts()} do pandas. Obtendo o seguinte resultado:
   \begin{figure}[H]
-    \centering
-    \includegraphics[width=0.8\textwidth]{../output/proporcao_dados.png}
+    \centerline{\includegraphics[width=0.8\linewidth]{../output/proporcao_dados.png}}
     \caption{Proporção de fraudes e não fraudes no dataset}
     \label{fig:proporcao_dados}
   \end{figure}
   Após isso, procuramos entender como as features se relacionavam com a coluna de Class, que era nossa coluna alvo. Então usamos o método \texttt{corr()} do pandas, buscando a correlação entre Class e o restante das features. obtendo o seguinte resultado para as features com maior correlação absoluta:
-  \begin{table}[H]
-    \centering
-    \begin{tabular}{lr}
-        \toprule
-        \textbf{Feature} & \textbf{Correlação com Class} \\
-        \midrule
-        V17    & -0.326481 \\
-        V14    & -0.302544 \\
-        V12    & -0.260593 \\
-        V10    & -0.216883 \\
-        V16    & -0.196539 \\
-        V3     & -0.192961 \\
-        V7     & -0.187257 \\
-        \bottomrule
-    \end{tabular}
-    \caption{Correlação das features com Class}
-    \label{tab:correlacao_features}
-\end{table}
+  \begin{table}[tb]
+      \caption{Correlação das features com Class}
+      \label{tab:correlacao_features}
+      \centering
+      \begin{tabular}{lr}
+          \toprule
+          \textbf{Feature} & \textbf{Correlação com Class} \\
+          \midrule
+          V17    & -0.326481 \\
+          V14    & -0.302544 \\
+          V12    & -0.260593 \\
+          V10    & -0.216883 \\
+          V16    & -0.196539 \\
+          V3     & -0.192961 \\
+          V7     & -0.187257 \\
+          \bottomrule
+      \end{tabular}
+  \end{table}
 \subsection{Abordagem 1: Modelagem da Classe Normal (Detecção de Anomalia)}
 \label{subsec:abordagem1}
   Para a primeira abordagem utilizamos o modelo de detecção de anomalias. Primeiramente, separamos apenas as 3 features mais relevantes para o modelo, esse número foi escolhido com base na performance do modelo. Foi percebido que ao diminuir cada vez mais o número de features tanto a medida de AUC-PR quanto a matriz de confusão resultavam em valores melhores. Após isso, separamos 2000 transações normais, e com o StandartScaler aplicamos uma normalização para esses dados. Depois aplicamos a normalização para o conjunto inteiro de dados (Com exceção da coluna Class). Após isso, tentamos encontrar o melhor valor de bandwith usando o método \texttt{GridSearchCV} do sklearn. O melhor valor encontrado foi 0.479, e com isso aplicamos um KDE e calculamos o score de anomalias.
-\begin{table}[H]
+\begin{table}[tb]
+    \caption{Transações normais}
+    \label{tab:score_anomalia_normal}
     \centering
-  \begin{minipage}{0.48\textwidth}
-      \centering
-      \begin{tabular}{lrr}
-          \toprule
-          & \textbf{anomaly\_score} & \textbf{true\_class} \\
-          \midrule
-          count & 284315.000000 & 284315.0 \\
-          mean & 3.818309 & 0.0 \\
-          std & 4.005647 & 0.0 \\
-          min & 2.346846 & 0.0 \\
-          25\% & 2.822756 & 0.0 \\
-          50\% & 3.311860 & 0.0 \\
-          75\% & 4.210312 & 0.0 \\
-          max & 557.518645 & 0.0 \\
-          \bottomrule
-      \end{tabular}
-      \caption{Transações normais}
-      \label{tab:score_anomalia_normal}
-  \end{minipage}\hfill
-  \begin{minipage}{0.48\textwidth}
-      \centering
-      \begin{tabular}{lrr}
-          \toprule
-          & \textbf{anomaly\_score} & \textbf{true\_class} \\
-          \midrule
-          count & 492.000000 & 492.0 \\
-          mean & 162.766740 & 1.0 \\
-          std & 250.679879 & 0.0 \\
-          min & 2.780611 & 1.0 \\
-          25\% & 26.711496 & 1.0 \\
-          50\% & 68.714390 & 1.0 \\
-          75\% & 156.108730 & 1.0 \\
-          max & 1377.747682 & 1.0 \\
-          \bottomrule
-      \end{tabular}
-      \caption{Transações fraudulentas}
-      \label{tab:score_anomalia_fraude}
-  \end{minipage}
+    \begin{tabular}{lrr}
+        \toprule
+        & \textbf{anomaly\_score} & \textbf{true\_class} \\
+        \midrule
+        count & 284315.000000 & 284315.0 \\
+        mean & 3.818309 & 0.0 \\
+        std & 4.005647 & 0.0 \\
+        min & 2.346846 & 0.0 \\
+        25\% & 2.822756 & 0.0 \\
+        50\% & 3.311860 & 0.0 \\
+        75\% & 4.210312 & 0.0 \\
+        max & 557.518645 & 0.0 \\
+        \bottomrule
+    \end{tabular}
+\end{table}
+
+\begin{table}[tb]
+    \caption{Transações fraudulentas}
+    \label{tab:score_anomalia_fraude}
+    \centering
+    \begin{tabular}{lrr}
+        \toprule
+        & \textbf{anomaly\_score} & \textbf{true\_class} \\
+        \midrule
+        count & 492.000000 & 492.0 \\
+        mean & 162.766740 & 1.0 \\
+        std & 250.679879 & 0.0 \\
+        min & 2.780611 & 1.0 \\
+        25\% & 26.711496 & 1.0 \\
+        50\% & 68.714390 & 1.0 \\
+        75\% & 156.108730 & 1.0 \\
+        max & 1377.747682 & 1.0 \\
+        \bottomrule
+    \end{tabular}
 \end{table}
 Apos isso, tentamos encontrar o melhor limiar para separar as transações, utilizamos o método precision\_recall\_curve do sklearn, e encontramos o melhor limiar para maximizar f1 sendo 34.9 Com isso, conseguimos os seguintes resultados após plotar a matriz de confusão:
 \begin{figure}[H]
-    \centering
-    \includegraphics[width=0.8\textwidth]{../output/matriz de confusao maximo f1.png}
+    \centerline{\includegraphics[width=0.8\linewidth]{../output/matriz de confusao maximo f1.png}}
     \caption{Matriz de confusão}
     \label{fig:matriz_confusao}
 \end{figure}
@@ -150,46 +143,44 @@ Segundo o próprio repositório do Kaggle, a matriz de confusão não é o melho
 \subsection{Abordagem 2: Classificação Supervisionada}
 \label{subsec:abordagem2}
   Nessa segunda abordagem utilizamos um modelo de regressão logística, utilizamos o método train\_test\_split do sklearn para separar 80\% dos dados para treino e 20\% para teste, isso foi realizado nos dados já normalizado com a ajuda do StandartScaler. Após isso, aplicamos o modelo de regressão logística e aplicamos o modelo nos dados de testes, obtendo a seguinte AUC-PR: 0.742, que foi um valor muito maior do que o obtido na primeira abordagem. Para ilustrar também o resultado, plotamos a matriz de confusão:
-  \begin{table}[H]
-      \centering
-      \begin{tabular}{lcccccc}
-          \toprule
-          & \textbf{Classe 0} & \textbf{Classe 1} & \textbf{Acurácia} & \textbf{Média Macro} & \textbf{Média Ponderada} \\
-          \midrule
-          Precision   & 0.999 & 0.829 & 0.999 & 0.914 & 0.999 \\
-          Recall     & 1.0 & 0.643 & 0.999 & 0.821 & 0.999 \\
-          F1-score               & 1.0 & 0.724 & 0.999 & 0.862 & 0.999 \\
-          Support      & 56864    & 98       & 0.999 & 56962    & 56962    \\
-          \bottomrule
-      \end{tabular}
-      \caption{Métricas de avaliação do modelo para as classes 0 (normal) e 1 (fraude)}
-      \label{tab:metricas_classificacao}
-  \end{table}
-  \begin{figure}[H]
+\begin{table}[tb]
+    \caption{Métricas de avaliação do modelo para as classes 0 (normal) e 1 (fraude)}
+    \label{tab:metricas_classificacao}
     \centering
-    \includegraphics[width=0.8\textwidth]{../output/matriz de confusao sem threshold regressao logistica.png}
+    \begin{tabular}{lccccc}
+        \toprule
+        & \textbf{Classe 0} & \textbf{Classe 1} \\
+        \midrule
+        Precision   & 0.999 & 0.829 \\
+        Recall      & 1.000 & 0.643 \\ 
+        F1-score    & 1.000 & 0.724 \\
+        Support     & 56864 & 98 \\
+        \bottomrule
+    \end{tabular}
+\end{table}
+  \begin{figure}[H]
+    \centerline{\includegraphics[width=0.8\linewidth]{../output/matriz de confusao sem threshold regressao logistica.png}}
     \caption{Matriz de confusão regressão logística}
     \label{fig:matriz_confusao_regressao_logistica}
   \end{figure}
   Para melhorar ainda mais o resultado, resolvemos encontrar um threshold utilizando o método \texttt{precision\_recall\_curve} do sklearn, e ao fazer isso encontramos um valor melhor de recall, entretanto o valor da precision diminuiu um pouco. Mas dado o contexto que o modelo deveria ser usado, ter um recall alto é melhor pois evita perdas financeiras para a empresa que utiliza o modelo, o valores obtidos foram
-  \begin{table}[H]
-    \centering
-    \begin{tabular}{lccccc}
-        \toprule
-                           & \textbf{Classe 0} & \textbf{Classe 1} & \textbf{Acurácia} & \textbf{Média Macro} & \textbf{Média Ponderada} \\
-        \midrule
-        Precision  & 0.999  & 0.692  & 0.999  & 0.846  & 0.999   \\
-        Recall     & 0.999  & 0.827  & 0.999  & 0.913  & 0.999   \\
-        F1-score   & 1.000  & 0.753  & 0.999  & 0.877  & 0.999   \\
-        Support    & 56864  & 98     & 56962  & 56962  & 56962   \\
-        \bottomrule
-    \end{tabular}
-    \caption{Métricas de avaliação do modelo (valores aproximados para 3 casas decimais)}
-    \label{tab:matriz_confusao_regressao_logistica_com_threshold}
-\end{table}
+  \begin{table}[tb]
+      \caption{Métricas de avaliação do modelo (valores aproximados para 3 casas decimais)}
+      \label{tab:matriz_confusao_regressao_logistica_com_threshold}
+      \centering
+      \begin{tabular}{lccccc}
+          \toprule
+          & \textbf{Classe 0} & \textbf{Classe 1} \\
+          \midrule
+          Precision  & 0.999  & 0.692 \\
+          Recall     & 0.999  & 0.827 \\
+          F1-score   & 1.000  & 0.753 \\
+          Support    & 56864  & 98    \\
+          \bottomrule
+      \end{tabular}
+  \end{table}
   \begin{figure}[H]
-    \centering
-    \includegraphics[width=0.8\textwidth]{../output/matriz de confusao com threshold regressao logistica.png}
+    \centerline{\includegraphics[width=0.8\linewidth]{../output/matriz de confusao com threshold regressao logistica.png}}
     \caption{Matriz de confusão regressão logística}
     \label{fig:matriz_confusao_regressao_logistica_com_threshold}
   \end{figure}
@@ -200,31 +191,29 @@ Ao utilizar o modelo LGBM, obtivemos um resultado muito superior aos anteriores.
     F1 = \frac{2 \cdot (precision \cdot recall)}{precision + recall}
 \end{equation}
 Seguem os resultados de precisão, recall e F1-score:
-\begin{table}[H]
+\begin{table}[tb]
+    \caption{Métricas de avaliação do modelo LGBM}
+    \label{tab:metricas_lgbm}
     \centering
     \begin{tabular}{lccccc}
         \toprule
-    & \textbf{0} & \textbf{1} & \textbf{Accuracy} & \textbf{macro avg} & \textbf{weighted avg} \\
+        & \textbf{Classe 0} & \textbf{Classe 1} \\
         \midrule
-        Precision  & 1.000 & 0.936 & 1.000 & 0.968 & 1.000 \\
-        Recall     & 1.000 & 0.829 & 1.000 & 0.915 & 1.000 \\
-        F1‐score   & 1.000 & 0.879 & 1.000 & 0.940 & 1.000 \\
-        Support    & 71079 & 123   & 1.000 & 71202 & 71202  \\
+        Precision  & 1.000 & 0.936 \\
+        Recall     & 1.000 & 0.829 \\
+        F1-score   & 1.000 & 0.879 \\
+        Support    & 71079 & 123   \\
         \bottomrule
     \end{tabular}
-    \caption{Métricas de avaliação do modelo LGBM}
-    \label{tab:metricas_lgbm}
 \end{table}
   \begin{figure}[H]
-    \centering
-    \includegraphics[width=0.8\textwidth]{../output/matriz confusao lgbm.png}
+    \centerline{\includegraphics[width=0.8\linewidth]{../output/matriz confusao lgbm.png}}
     \label{fig:matriz_confusao_lgbm}
   \end{figure}
 Também calculamos a AUC-PR, que foi de 0.8585
 A utilização do LGBM trouxe uma distribuição muito heterogênea entre os scores, oque pode ser visto na figura \ref{fig:distribuicao_scores_lgbm}. Enquanto os scores de dados normais se concentram em torno de 0, os scores de dados fraudulentos se concentram em torno de 1, mostrando que o LGBM conseguiu separar bem as classes.
 \begin{figure}[H]
-    \centering
-    \includegraphics[width=0.8\textwidth]{../output/distribuicao scores lgbm.png}
+    \centerline{\includegraphics[width=0.8\linewidth]{../output/distribuicao scores lgbm.png}}
     \caption{Distribuição dos scores do modelo LGBM}
     \label{fig:distribuicao_scores_lgbm}
 \end{figure}
@@ -330,7 +319,7 @@ Premissas Implícitas:
 
 \subsection{Exercício 2: Verossimilhança, entropia cruzada e regressão logística}
 \label{subsec:ex2}
-\section*{(a) Mostrar que maximizar a função de verossimilhança é equivalente a minimizar a entropia cruzada.}
+\section{(a) Mostrar que maximizar a função de verossimilhança é equivalente a minimizar a entropia cruzada.}
 Para um modelo de regressão logística com alvos binários:
 \[
 p(\mathbf{t} | \mathbf{w}) = \prod_{n=1}^{N} y_n^{t_n} (1 - y_n)^{1 - t_n}
@@ -349,7 +338,7 @@ E(\mathbf{w}) = -\sum_{n=1}^{N} \left[ t_n \ln y_n + (1 - t_n) \ln(1 - y_n) \rig
 \]
 Comparando as duas equações, vemos que $E(\mathbf{w}) = -\ln p(\mathbf{t} | \mathbf{w})$. Portanto, maximizar a verossimilhança é equivalente a minimizar a entropia cruzada.
 
-\section*{(b) Derivando $\nabla E(\mathbf{w})$}
+\section{(b) Derivando $\nabla E(\mathbf{w})$}
 Lembrando que $y_n = \sigma(\mathbf{a}_n)$, com $\mathbf{a}_n = \mathbf{w}^T \boldsymbol{\phi}_n$, e que
 \[
 \frac{d\sigma(a)}{da} = \sigma(a)(1 - \sigma(a)),
@@ -365,7 +354,7 @@ O gradiente de $E(\mathbf{w})$ é:
 &= \sum_{n=1}^{N} (y_n - t_n) \boldsymbol{\phi}_n.
 \end{align*}
 
-\section*{(c) Explicação do problema de overfitting}
+\section{(c) Explicação do problema de overfitting}
 O overfitting ocorre quando os dados são linearmente separáveis. Nesse caso, existe um $\mathbf{w}$ tal que $\mathbf{w}^T \boldsymbol{\phi}_n$ separa perfeitamente as classes, fazendo com que $\|\mathbf{w}\| \to \infty$.
 
 Para evitar isso, usa-se regularização $L_2$:
@@ -486,7 +475,9 @@ em que \(\text{Precision}(r)\) é a precisão correspondente ao recall \(r\).
 \section{Correlação das Features com Class}
 \label{apendice:correlacao}
 
-\begin{table}[H]
+\begin{table}[tb]
+    \caption{Correlação das features com a variável Class}
+    \label{tab:correlacao_features_completa}
     \centering
     \begin{tabular}{lr}
         \toprule
@@ -524,8 +515,6 @@ em que \(\text{Precision}(r)\) é a precisão correspondente ao recall \(r\).
         V22    &  0.000805 \\
         \bottomrule
     \end{tabular}
-    \caption{Correlação das features com a variável Class}
-    \label{tab:correlacao_features_completa}
 \end{table}
 
 \end{document}

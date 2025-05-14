@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.25 (MiKTeX 24.1) (preloaded format=pdflatex 2025.4.7)  13 MAY 2025 21:49
+This is pdfTeX, Version 3.141592653-2.6-1.40.25 (MiKTeX 24.1) (preloaded format=pdflatex 2025.4.7)  13 MAY 2025 22:24
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -385,3 +385,470 @@ Package: ifvtex 2019/10/25 v1.7 ifvtex legacy package. Use iftex instead.
 \Gm@layoutvoffset=\dimen187
 \Gm@dimlist=\toks26
  (C:\Users\Julio Vinicius\AppData\Local\Programs\MiKTeX\tex/latex/geometry\geometry.cfg)) (C:\Users\Julio Vinicius\AppData\Local\Programs\MiKTeX\tex/latex/listings\listings.sty
+\lst@mode=\count297
+\lst@gtempboxa=\box55
+\lst@token=\toks27
+\lst@length=\count298
+\lst@currlwidth=\dimen188
+\lst@column=\count299
+\lst@pos=\count300
+\lst@lostspace=\dimen189
+\lst@width=\dimen190
+\lst@newlines=\count301
+\lst@lineno=\count302
+\lst@maxwidth=\dimen191
+ (C:\Users\Julio Vinicius\AppData\Local\Programs\MiKTeX\tex/latex/listings\lstmisc.sty
+File: lstmisc.sty 2023/02/27 1.9 (Carsten Heinz)
+\c@lstnumber=\count303
+\lst@skipnumbers=\count304
+\lst@framebox=\box56
+) (C:\Users\Julio Vinicius\AppData\Local\Programs\MiKTeX\tex/latex/listings\listings.cfg
+File: listings.cfg 2023/02/27 1.9 listings configuration
+))
+Package: listings 2023/02/27 1.9 (Carsten Heinz)
+ (C:\Users\Julio Vinicius\AppData\Local\Programs\MiKTeX\tex/latex/xcolor\xcolor.sty
+Package: xcolor 2023/11/15 v3.01 LaTeX color extensions (UK)
+ (C:\Users\Julio Vinicius\AppData\Local\Programs\MiKTeX\tex/latex/graphics-cfg\color.cfg
+File: color.cfg 2016/01/02 v1.6 sample color configuration
+)
+Package xcolor Info: Driver file: pdftex.def on input line 274.
+ (C:\Users\Julio Vinicius\AppData\Local\Programs\MiKTeX\tex/latex/graphics\mathcolor.ltx)
+Package xcolor Info: Model `cmy' substituted by `cmy0' on input line 1350.
+Package xcolor Info: Model `hsb' substituted by `rgb' on input line 1354.
+Package xcolor Info: Model `RGB' extended on input line 1366.
+Package xcolor Info: Model `HTML' substituted by `rgb' on input line 1368.
+Package xcolor Info: Model `Hsb' substituted by `hsb' on input line 1369.
+Package xcolor Info: Model `tHsb' substituted by `hsb' on input line 1370.
+Package xcolor Info: Model `HSB' substituted by `hsb' on input line 1371.
+Package xcolor Info: Model `Gray' substituted by `gray' on input line 1372.
+Package xcolor Info: Model `wave' substituted by `hsb' on input line 1373.
+) (C:\Users\Julio Vinicius\AppData\Local\Programs\MiKTeX\tex/latex/booktabs\booktabs.sty
+Package: booktabs 2020/01/12 v1.61803398 Publication quality tables
+\heavyrulewidth=\dimen192
+\lightrulewidth=\dimen193
+\cmidrulewidth=\dimen194
+\belowrulesep=\dimen195
+\belowbottomsep=\dimen196
+\aboverulesep=\dimen197
+\abovetopsep=\dimen198
+\cmidrulesep=\dimen199
+\cmidrulekern=\dimen256
+\defaultaddspace=\dimen257
+\@cmidla=\count305
+\@cmidlb=\count306
+\@aboverulesep=\dimen258
+\@belowrulesep=\dimen259
+\@thisruleclass=\count307
+\@lastruleclass=\count308
+\@thisrulewidth=\dimen260
+) (C:\Users\Julio Vinicius\AppData\Local\Programs\MiKTeX\tex/latex/float\float.sty
+Package: float 2001/11/08 v1.3d Float enhancements (AL)
+\c@float@type=\count309
+\float@exts=\toks28
+\float@box=\box57
+\@float@everytoks=\toks29
+\@floatcapt=\box58
+) (C:\Users\Julio Vinicius\AppData\Local\Programs\MiKTeX\tex/latex/cite\cite.sty
+LaTeX Info: Redefining \cite on input line 302.
+LaTeX Info: Redefining \nocite on input line 332.
+Package: cite 2015/02/27  v 5.5
+) (C:\Users\Julio Vinicius\AppData\Local\Programs\MiKTeX\tex/latex/algorithms\algorithmic.sty
+Package: algorithmic 2009/08/24 v0.1 Document Style `algorithmic'
+ (C:\Users\Julio Vinicius\AppData\Local\Programs\MiKTeX\tex/latex/base\ifthen.sty
+Package: ifthen 2022/04/13 v1.1d Standard LaTeX ifthen package (DPC)
+)
+\c@ALC@unique=\count310
+\c@ALC@line=\count311
+\c@ALC@rem=\count312
+\c@ALC@depth=\count313
+\ALC@tlm=\skip55
+\algorithmicindent=\skip56
+) (C:\Users\Julio Vinicius\AppData\Local\Programs\MiKTeX\tex/latex/base\textcomp.sty
+Package: textcomp 2020/02/02 v2.0n Standard LaTeX package
+)
+LaTeX Font Info:    Trying to load font information for T1+lmr on input line 23.
+ (C:\Users\Julio Vinicius\AppData\Local\Programs\MiKTeX\tex/latex/lm\t1lmr.fd
+File: t1lmr.fd 2015/05/01 v1.6.1 Font defs for Latin Modern
+) (C:\Users\Julio Vinicius\AppData\Local\Programs\MiKTeX\tex/latex/l3backend\l3backend-pdftex.def
+File: l3backend-pdftex.def 2024-01-04 L3 backend support: PDF output (pdfTeX)
+\l__color_backend_stack_int=\count314
+\l__pdf_internal_box=\box59
+) (relatorio.aux)
+\openout1 = `relatorio.aux'.
+
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 23.
+LaTeX Font Info:    ... okay on input line 23.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 23.
+LaTeX Font Info:    ... okay on input line 23.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 23.
+LaTeX Font Info:    ... okay on input line 23.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 23.
+LaTeX Font Info:    ... okay on input line 23.
+LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 23.
+LaTeX Font Info:    ... okay on input line 23.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 23.
+LaTeX Font Info:    ... okay on input line 23.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 23.
+LaTeX Font Info:    ... okay on input line 23.
+LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 23.
+LaTeX Font Info:    ... okay on input line 23.
+LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 23.
+LaTeX Font Info:    ... okay on input line 23.
+
+-- Lines per column: 46 (approximate, difference = 4.47656pt).
+Package hyperref Info: Link coloring OFF on input line 23.
+(relatorio.out) (relatorio.out)
+\@outlinefile=\write3
+\openout3 = `relatorio.out'.
+
+ (C:\Users\Julio Vinicius\AppData\Local\Programs\MiKTeX\tex/context/base/mkii\supp-pdf.mkii
+[Loading MPS to PDF converter (version 2006.09.02).]
+\scratchcounter=\count315
+\scratchdimen=\dimen261
+\scratchbox=\box60
+\nofMPsegments=\count316
+\nofMParguments=\count317
+\everyMPshowfont=\toks30
+\MPscratchCnt=\count318
+\MPscratchDim=\dimen262
+\MPnumerator=\count319
+\makeMPintoPDFobject=\count320
+\everyMPtoPDFconversion=\toks31
+) (C:\Users\Julio Vinicius\AppData\Local\Programs\MiKTeX\tex/latex/epstopdf-pkg\epstopdf-base.sty
+Package: epstopdf-base 2020-01-24 v2.11 Base part for package epstopdf
+Package epstopdf-base Info: Redefining graphics rule for `.eps' on input line 485.
+ (C:\Users\Julio Vinicius\AppData\Local\Programs\MiKTeX\tex/latex/00miktex\epstopdf-sys.cfg
+File: epstopdf-sys.cfg 2021/03/18 v2.0 Configuration of epstopdf for MiKTeX
+))
+*geometry* driver: auto-detecting
+*geometry* detected driver: pdftex
+*geometry* verbose mode - [ preamble ] result:
+* driver: pdftex
+* paper: <default>
+* layout: <same size as paper>
+* layoutoffset:(h,v)=(0.0pt,0.0pt)
+* modes: 
+* h-part:(L,W,R)=(92.14519pt, 430.00462pt, 92.14519pt)
+* v-part:(T,H,B)=(95.39737pt, 556.47656pt, 143.09605pt)
+* \paperwidth=614.295pt
+* \paperheight=794.96999pt
+* \textwidth=430.00462pt
+* \textheight=556.47656pt
+* \oddsidemargin=19.8752pt
+* \evensidemargin=19.8752pt
+* \topmargin=-7.44023pt
+* \headheight=12.0pt
+* \headsep=18.56761pt
+* \topskip=12.0pt
+* \footskip=40.5821pt
+* \marginparwidth=20.0pt
+* \marginparsep=10.0pt
+* \columnsep=12.0pt
+* \skip\footins=10.79993pt plus 4.79993pt minus 2.39996pt
+* \hoffset=0.0pt
+* \voffset=0.0pt
+* \mag=1000
+* \@twocolumntrue
+* \@twosidefalse
+* \@mparswitchfalse
+* \@reversemarginfalse
+* (1in=72.27pt=25.4mm, 1cm=28.453pt)
+
+\c@lstlisting=\count321
+LaTeX Font Info:    Trying to load font information for T1+lmtt on input line 69.
+(C:\Users\Julio Vinicius\AppData\Local\Programs\MiKTeX\tex/latex/lm\t1lmtt.fd
+File: t1lmtt.fd 2015/05/01 v1.6.1 Font defs for Latin Modern
+)
+<../output/proporcao_dados.png, id=71, 426.393pt x 281.853pt>
+File: ../output/proporcao_dados.png Graphic file (type png)
+<use ../output/proporcao_dados.png>
+Package pdftex.def Info: ../output/proporcao_dados.png  used on input line 71.
+(pdftex.def)             Requested size: 167.20247pt x 110.52002pt.
+
+Underfull \vbox (badness 2503) has occurred while \output is active []
+
+LaTeX Font Info:    Trying to load font information for OT1+lmr on input line 80.
+ (C:\Users\Julio Vinicius\AppData\Local\Programs\MiKTeX\tex/latex/lm\ot1lmr.fd
+File: ot1lmr.fd 2015/05/01 v1.6.1 Font defs for Latin Modern
+)
+LaTeX Font Info:    Trying to load font information for OML+lmm on input line 80.
+ (C:\Users\Julio Vinicius\AppData\Local\Programs\MiKTeX\tex/latex/lm\omllmm.fd
+File: omllmm.fd 2015/05/01 v1.6.1 Font defs for Latin Modern
+)
+LaTeX Font Info:    Trying to load font information for OMS+lmsy on input line 80.
+ (C:\Users\Julio Vinicius\AppData\Local\Programs\MiKTeX\tex/latex/lm\omslmsy.fd
+File: omslmsy.fd 2015/05/01 v1.6.1 Font defs for Latin Modern
+)
+LaTeX Font Info:    Trying to load font information for OMX+lmex on input line 80.
+ (C:\Users\Julio Vinicius\AppData\Local\Programs\MiKTeX\tex/latex/lm\omxlmex.fd
+File: omxlmex.fd 2015/05/01 v1.6.1 Font defs for Latin Modern
+)
+LaTeX Font Info:    External font `lmex10' loaded for size
+(Font)              <8> on input line 80.
+LaTeX Font Info:    External font `lmex10' loaded for size
+(Font)              <6> on input line 80.
+LaTeX Font Info:    External font `lmex10' loaded for size
+(Font)              <5> on input line 80.
+LaTeX Font Info:    Trying to load font information for U+msa on input line 80.
+ (C:\Users\Julio Vinicius\AppData\Local\Programs\MiKTeX\tex/latex/amsfonts\umsa.fd
+File: umsa.fd 2013/01/14 v3.01 AMS symbols A
+)
+LaTeX Font Info:    Trying to load font information for U+msb on input line 80.
+ (C:\Users\Julio Vinicius\AppData\Local\Programs\MiKTeX\tex/latex/amsfonts\umsb.fd
+File: umsb.fd 2013/01/14 v3.01 AMS symbols B
+) [1{C:/Users/Julio Vinicius/AppData/Local/MiKTeX/fonts/map/pdftex/pdftex.map}{C:/Users/Julio Vinicius/AppData/Local/Programs/MiKTeX/fonts/enc/dvips/lm/lm-ec.enc}
+
+
+
+pdfTeX warning (ext4): destination with the same identifier (name{table.1}) has been already used, duplicate ignored
+<argument> ...shipout:D \box_use:N \l_shipout_box 
+                                                  \__shipout_drop_firstpage_...
+l.116 
+      
+pdfTeX warning (ext4): destination with the same identifier (name{figure.1}) has been already used, duplicate ignored
+<argument> ...shipout:D \box_use:N \l_shipout_box 
+                                                  \__shipout_drop_firstpage_...
+l.116 
+       <../output/proporcao_dados.png>]
+<../output/matriz de confusao maximo f1.png, id=91, 419.8887pt x 281.853pt>
+File: ../output/matriz de confusao maximo f1.png Graphic file (type png)
+<use ../output/matriz de confusao maximo f1.png>
+Package pdftex.def Info: ../output/matriz de confusao maximo f1.png  used on input line 138.
+(pdftex.def)             Requested size: 167.20247pt x 112.23601pt.
+
+Underfull \vbox (badness 1043) has occurred while \output is active []
+
+<../output/matriz de confusao sem threshold regressao logistica.png, id=92, 381.5856pt x 268.1217pt>
+File: ../output/matriz de confusao sem threshold regressao logistica.png Graphic file (type png)
+<use ../output/matriz de confusao sem threshold regressao logistica.png>
+Package pdftex.def Info: ../output/matriz de confusao sem threshold regressao logistica.png  used on input line 162.
+(pdftex.def)             Requested size: 167.20247pt x 117.48706pt.
+
+Underfull \vbox (badness 4132) has occurred while \output is active []
+
+ [2
+pdfTeX warning (ext4): destination with the same identifier (name{table.2}) has been already used, duplicate ignored
+<argument> ...shipout:D \box_use:N \l_shipout_box 
+                                                  \__shipout_drop_firstpage_...
+l.166   P
+         ara melhorar ainda mais o resultado, resolvemos encontrar um thresh...
+pdfTeX warning (ext4): destination with the same identifier (name{table.3}) has been already used, duplicate ignored
+<argument> ...shipout:D \box_use:N \l_shipout_box 
+                                                  \__shipout_drop_firstpage_...
+l.166   P
+         ara melhorar ainda mais o resultado, resolvemos encontrar um thresh...
+pdfTeX warning (ext4): destination with the same identifier (name{table.4}) has been already used, duplicate ignored
+<argument> ...shipout:D \box_use:N \l_shipout_box 
+                                                  \__shipout_drop_firstpage_...
+l.166   P
+         ara melhorar ainda mais o resultado, resolvemos encontrar um thresh...
+pdfTeX warning (ext4): destination with the same identifier (name{figure.2}) has been already used, duplicate ignored
+<argument> ...shipout:D \box_use:N \l_shipout_box 
+                                                  \__shipout_drop_firstpage_...
+l.166   P
+         ara melhorar ainda mais o resultado, resolvemos encontrar um thresh... <../output/matriz de confusao maximo f1.png>]
+<../output/matriz de confusao com threshold regressao logistica.png, id=102, 381.5856pt x 268.1217pt>
+File: ../output/matriz de confusao com threshold regressao logistica.png Graphic file (type png)
+<use ../output/matriz de confusao com threshold regressao logistica.png>
+Package pdftex.def Info: ../output/matriz de confusao com threshold regressao logistica.png  used on input line 183.
+(pdftex.def)             Requested size: 167.20247pt x 117.48706pt.
+
+Underfull \hbox (badness 7814) in paragraph at lines 189--190
+\T1/lmr/m/n/10 e ajus-ta-mos o th-reshold para ma-xi-mi-zar
+ []
+
+
+Underfull \hbox (badness 3690) in paragraph at lines 189--190
+\T1/lmr/m/n/10 o F1-score. Os th-resholds, pre-ci-sion e re-
+ []
+
+
+Underfull \hbox (badness 1460) in paragraph at lines 189--190
+\T1/lmr/m/n/10 call fo-ram en-con-tra-dos uti-li-zando o mé-todo
+ []
+
+
+Underfull \vbox (badness 3780) has occurred while \output is active []
+
+LaTeX Font Info:    External font `lmex10' loaded for size
+(Font)              <10> on input line 190.
+LaTeX Font Info:    External font `lmex10' loaded for size
+(Font)              <7> on input line 190.
+<../output/matriz confusao lgbm.png, id=103, 381.5856pt x 268.8444pt>
+File: ../output/matriz confusao lgbm.png Graphic file (type png)
+<use ../output/matriz confusao lgbm.png>
+Package pdftex.def Info: ../output/matriz confusao lgbm.png  used on input line 210.
+(pdftex.def)             Requested size: 167.20247pt x 117.80373pt.
+<../output/distribuicao scores lgbm.png, id=105, 570.933pt x 281.853pt>
+File: ../output/distribuicao scores lgbm.png Graphic file (type png)
+<use ../output/distribuicao scores lgbm.png>
+Package pdftex.def Info: ../output/distribuicao scores lgbm.png  used on input line 216.
+(pdftex.def)             Requested size: 167.20247pt x 82.54381pt.
+
+Underfull \vbox (badness 1210) has occurred while \output is active []
+
+ [3
+pdfTeX warning (ext4): destination with the same identifier (name{table.5}) has been already used, duplicate ignored
+<argument> ...shipout:D \box_use:N \l_shipout_box 
+                                                  \__shipout_drop_firstpage_...
+l.221 
+      
+pdfTeX warning (ext4): destination with the same identifier (name{figure.3}) has been already used, duplicate ignored
+<argument> ...shipout:D \box_use:N \l_shipout_box 
+                                                  \__shipout_drop_firstpage_...
+l.221 
+      
+pdfTeX warning (ext4): destination with the same identifier (name{figure.4}) has been already used, duplicate ignored
+<argument> ...shipout:D \box_use:N \l_shipout_box 
+                                                  \__shipout_drop_firstpage_...
+l.221 
+      
+pdfTeX warning (ext4): destination with the same identifier (name{table.6}) has been already used, duplicate ignored
+<argument> ...shipout:D \box_use:N \l_shipout_box 
+                                                  \__shipout_drop_firstpage_...
+l.221 
+      {C:/Users/Julio Vinicius/AppData/Local/Programs/MiKTeX/fonts/enc/dvips/lm/lm-mathit.enc}{C:/Users/Julio Vinicius/AppData/Local/Programs/MiKTeX/fonts/enc/dvips/lm/lm-rm.enc}{C:/Users/Julio Vinicius/AppData/Local/Programs/MiKTeX/fonts/enc/dvips/lm/lm-mathsy.enc} <../output/matriz de confusao sem threshold regressao logistica.png> <../output/matriz de confusao com threshold regressao logistica.png> <../output/matriz confusao lgbm.png>]
+Underfull \hbox (badness 10000) in paragraph at lines 238--241
+\T1/lmr/m/n/10 A fron-teira de de-ci-são é quando
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 238--241
+
+ []
+
+
+Overfull \hbox (125.51004pt too wide) detected at line 245
+\OMS/lmsy/m/n/10 N\OT1/lmr/m/n/10 (\OT1/lmr/bx/n/10 x\OMS/lmsy/m/n/10 j[][]\OML/lmm/m/it/10 ; [][]\OT1/lmr/m/n/10 ) = [] [] [] = \OML/lmm/m/it/10 p\OT1/lmr/m/n/10 (\OT1/lmr/bx/n/10 x\OMS/lmsy/m/n/10 j\OML/lmm/m/it/10 C[]\OT1/lmr/m/n/10 )
+ []
+
+
+Overfull \hbox (63.18085pt too wide) detected at line 263
+\OT1/lmr/m/n/10 (\OT1/lmr/bx/n/10 x \OMS/lmsy/m/n/10 ^^@ [][]\OT1/lmr/m/n/10 )[][][](\OT1/lmr/bx/n/10 x \OMS/lmsy/m/n/10 ^^@ [][]\OT1/lmr/m/n/10 ) + [] \OMS/lmsy/m/n/10 j[][]j \OT1/lmr/m/n/10 = (\OT1/lmr/bx/n/10 x \OMS/lmsy/m/n/10 ^^@ [][]\OT1/lmr/m/n/10 )[][][](\OT1/lmr/bx/n/10 x \OMS/lmsy/m/n/10 ^^@ [][]\OT1/lmr/m/n/10 ) + [] \OMS/lmsy/m/n/10 j[][]j\OML/lmm/m/it/10 :
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 263--265
+\T1/lmr/m/n/10 Como $\OML/lmm/m/it/10 x[]\OT1/lmr/m/n/10 ^^F[]\OML/lmm/m/it/10 ^^V$ \T1/lmr/m/n/10 é es-ca-lar, $\OML/lmm/m/it/10 x[]\OT1/lmr/m/n/10 ^^F[]\OML/lmm/m/it/10 ^^V \OT1/lmr/m/n/10 =
+ []
+
+
+Overfull \hbox (160.87683pt too wide) detected at line 267
+\OT1/lmr/bx/n/10 x[][][]x \OMS/lmsy/m/n/10 ^^@ \OT1/lmr/m/n/10 2[][][][]\OT1/lmr/bx/n/10 x \OT1/lmr/m/n/10 + [][][][][][] + [] \OMS/lmsy/m/n/10 j[][]j \OT1/lmr/m/n/10 = \OT1/lmr/bx/n/10 x[][][]x \OMS/lmsy/m/n/10 ^^@ \OT1/lmr/m/n/10 2[][][][]\OT1/lmr/bx/n/10 x \OT1/lmr/m/n/10 + [][][][][][] + [] \OMS/lmsy/m/n/10 j[][]j\OML/lmm/m/it/10 :
+ []
+
+
+Overfull \hbox (167.30505pt too wide) detected at line 271
+\OT1/lmr/bx/n/10 x[]\OT1/lmr/m/n/10 ([][] \OMS/lmsy/m/n/10 ^^@ [][]\OT1/lmr/m/n/10 )\OT1/lmr/bx/n/10 x \OMS/lmsy/m/n/10 ^^@ \OT1/lmr/m/n/10 2([][][][] \OMS/lmsy/m/n/10 ^^@ [][][][]\OT1/lmr/m/n/10 )\OT1/lmr/bx/n/10 x \OT1/lmr/m/n/10 + ([][][][][][] \OMS/lmsy/m/n/10 ^^@ [][][][][][] \OT1/lmr/m/n/10 + [] \OMS/lmsy/m/n/10 j[][]j ^^@ [] j[][]j\OT1/lmr/m/n/10 ) = 0\OML/lmm/m/it/10 :
+ []
+
+[4
+pdfTeX warning (ext4): destination with the same identifier (name{figure.5}) has been already used, duplicate ignored
+<argument> ...shipout:D \box_use:N \l_shipout_box 
+                                                  \__shipout_drop_firstpage_...
+l.277 \[
+        {C:/Users/Julio Vinicius/AppData/Local/Programs/MiKTeX/fonts/enc/dvips/lm/lm-mathex.enc} <../output/distribuicao scores lgbm.png>]
+Overfull \hbox (19.92311pt too wide) detected at line 284
+[]
+ []
+
+
+Overfull \hbox (201.10065pt too wide) detected at line 288
+\OMS/lmsy/m/n/10 ^^@[]\OT1/lmr/m/n/10 (\OT1/lmr/bx/n/10 x[][][]x \OMS/lmsy/m/n/10 ^^@ \OT1/lmr/m/n/10 2[][][][]\OT1/lmr/bx/n/10 x \OT1/lmr/m/n/10 + [][][][][][]) + [] \OML/lmm/m/it/10 ^^Y \OT1/lmr/m/n/10 = \OMS/lmsy/m/n/10 ^^@[]\OT1/lmr/m/n/10 (\OT1/lmr/bx/n/10 x[][][]x \OMS/lmsy/m/n/10 ^^@ \OT1/lmr/m/n/10 2[][][][]\OT1/lmr/bx/n/10 x \OT1/lmr/m/n/10 + [][][][][][]) + [](1 \OMS/lmsy/m/n/10 ^^@ \OML/lmm/m/it/10 ^^Y\OT1/lmr/m/n/10 )\OML/lmm/m/it/10 :
+ []
+
+
+Overfull \hbox (59.22069pt too wide) detected at line 292
+\OT1/lmr/m/n/10 ([][] \OMS/lmsy/m/n/10 ^^@ [][]\OT1/lmr/m/n/10 )[][][]\OT1/lmr/bx/n/10 x \OMS/lmsy/m/n/10 ^^@ []\OT1/lmr/m/n/10 ([][][][][][] \OMS/lmsy/m/n/10 ^^@ [][][][][][]\OT1/lmr/m/n/10 ) + [] [] = 0\OML/lmm/m/it/10 :
+ []
+
+
+Overfull \hbox (0.88744pt too wide) detected at line 298
+[]
+ []
+
+
+Underfull \hbox (badness 2951) in paragraph at lines 338--340
+\T1/lmr/m/n/10 Comparando as duas equa-ções, ve-mos que
+ []
+
+[5]
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `math shift' on input line 341.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `\nabla' on input line 341.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `math shift' on input line 341.
+
+
+Overfull \hbox (51.58923pt too wide) detected at line 349
+\OML/lmm/m/it/10 E\OT1/lmr/m/n/10 (\OT1/lmr/bx/n/10 w\OT1/lmr/m/n/10 ) = \OMS/lmsy/m/n/10 ^^@ [] [] \OML/lmm/m/it/10 :
+ []
+
+
+Overfull \hbox (103.587pt too wide) detected at line 355
+[]
+ []
+
+
+Overfull \hbox (67.20833pt too wide) detected at line 363
+\OML/lmm/m/it/10 E[]\OT1/lmr/m/n/10 (\OT1/lmr/bx/n/10 w\OT1/lmr/m/n/10 ) = \OMS/lmsy/m/n/10 ^^@ [] [] \OT1/lmr/m/n/10 + []\OMS/lmsy/m/n/10 k\OT1/lmr/bx/n/10 w\OMS/lmsy/m/n/10 k[]\OML/lmm/m/it/10 ;
+ []
+
+
+Underfull \hbox (badness 4144) in paragraph at lines 390--391
+[]\T1/lmr/m/n/10 Parcela das tran-sa-ções clas-si-fi-ca-das
+ []
+
+[6]
+Overfull \hbox (166.5892pt too wide) detected at line 449
+[]\OT1/lmr/m/n/10 (\OML/lmm/m/it/10 ^^\\OT1/lmr/m/n/10 ) = []\OML/lmm/m/it/10 ;  []\OT1/lmr/m/n/10 (\OML/lmm/m/it/10 ^^\\OT1/lmr/m/n/10 ) = []\OML/lmm/m/it/10 :
+ []
+
+** WARNING: Ignoring useless \section in Appendix (line 475).
+
+** Conference Paper **
+Before submitting the final camera ready copy, remember to:
+
+ 1. Manually equalize the lengths of two columns on the last page
+ of your paper;
+
+ 2. Ensure that any PostScript and/or PDF output post-processing
+ uses only Type 1 fonts and that every step in the generation
+ process uses the appropriate paper size.
+
+[7] [8
+pdfTeX warning (ext4): destination with the same identifier (name{table.7}) has been already used, duplicate ignored
+<argument> ...shipout:D \box_use:N \l_shipout_box 
+                                                  \__shipout_drop_firstpage_...
+l.520 \end{document}
+                    
+
+] (relatorio.aux)
+ ***********
+LaTeX2e <2023-11-01> patch level 1
+L3 programming layer <2024-01-04>
+ ***********
+Package rerunfilecheck Info: File `relatorio.out' has not changed.
+(rerunfilecheck)             Checksum: 191A4ADA9100F269AAD844BF79A65545;4162.
+ ) 
+Here is how much of TeX's memory you used:
+ 14841 strings out of 474486
+ 238156 string characters out of 5739472
+ 1949542 words of memory out of 5000000
+ 36822 multiletter control sequences out of 15000+600000
+ 768933 words of font info for 157 fonts, out of 8000000 for 9000
+ 1141 hyphenation exceptions out of 8191
+ 75i,13n,79p,1772b,612s stack positions out of 10000i,1000n,20000p,200000b,200000s
+<C:/Users/Julio Vinicius/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmbx10.pfb><C:/Users/Julio Vinicius/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmbx8.pfb><C:/Users/Julio Vinicius/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmbx9.pfb><C:/Users/Julio Vinicius/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmbxi10.pfb><C:/Users/Julio Vinicius/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmcsc10.pfb><C:/Users/Julio Vinicius/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmex10.pfb><C:/Users/Julio Vinicius/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmmi10.pfb><C:/Users/Julio Vinicius/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmmi5.pfb><C:/Users/Julio Vinicius/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmmi7.pfb><C:/Users/Julio Vinicius/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmmib10.pfb><C:/Users/Julio Vinicius/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmr10.pfb><C:/Users/Julio Vinicius/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmr12.pfb><C:/Users/Julio Vinicius/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmr17.pfb><C:/Users/Julio Vinicius/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmr7.pfb><C:/Users/Julio Vinicius/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmr8.pfb><C:/Users/Julio Vinicius/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmri10.pfb><C:/Users/Julio Vinicius/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmsy10.pfb><C:/Users/Julio Vinicius/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmsy7.pfb><C:/Users/Julio Vinicius/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmtt10.pfb><C:/Users/Julio Vinicius/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/symbols/msam10.pfb>
+Output written on relatorio.pdf (8 pages, 505999 bytes).
+PDF statistics:
+ 278 PDF objects out of 1000 (max. 8388607)
+ 57 named destinations out of 1000 (max. 500000)
+ 167 words of extra memory for PDF output out of 10000 (max. 10000000)
+
