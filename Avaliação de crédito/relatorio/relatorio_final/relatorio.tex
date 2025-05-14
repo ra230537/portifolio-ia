@@ -1,16 +1,25 @@
-\documentclass[a4paper,12pt]{article}
-\usepackage[utf8]{inputenc}
-\usepackage[brazil]{babel}
-\usepackage[T1]{fontenc}
-\usepackage{lmodern}
+\documentclass[conference]{IEEEtran}
+\IEEEoverridecommandlockouts
+% \usepackage[utf8]{inputenc}
+% \usepackage[brazil]{babel}
+% \usepackage[T1]{fontenc}
+% \usepackage{lmodern}
 \usepackage{hyperref}
 \usepackage{graphicx}
 \usepackage{amsmath}
-\usepackage{geometry}
+\usepackage{amssymb}
+% \usepackage{geometry}
 \usepackage{listings}
 \usepackage{xcolor}
-\usepackage{booktabs}
+% \usepackage{booktabs}
 \usepackage{float}
+
+\usepackage{cite}
+\usepackage{amsmath,amssymb,amsfonts}
+\usepackage{algorithmic}
+\usepackage{graphicx}
+\usepackage{textcomp}
+\usepackage{xcolor}
 \lstdefinestyle{pythonstyle}{
     language=Python,
     basicstyle=\ttfamily\small,
@@ -230,19 +239,244 @@ A primeira abordagem, que utilizou o modelo de detecção de anomalias, obteve u
 \section{Respostas Teórico-Conceituais (Parte 2)}
 \label{sec:teoria}
 
-\subsection{Exercício 1: Fronteira de decisão em modelos generativos}
+\subsection{Exercício 1}
 \label{subsec:ex1}
+\subsection*{(a) Fronteira de Decisão com Covariâncias Diferentes e Priors Iguais}
+
+Sabemos que a probabilidade posterior de uma classe $C_k$ dado um vetor de features $\mathbf{x}$ é dada pelo Teorema de Bayes:
+\[
+p(C_k | \mathbf{x}) = \frac{p(\mathbf{x} | C_k) p(C_k)}{p(\mathbf{x})}.
+\]
+A fronteira de decisão é quando $p(C_1 | \mathbf{x}) = p(C_2 | \mathbf{x})$. \\
+Segundo o enunciado,  $p(C_1) = p(C_2) = 0.5$. \\
+
+Sabemos que:
+\[
+\mathcal{N}(\mathbf{x} | \boldsymbol{\mu}_k, \boldsymbol{\Sigma}_k) = \frac{1}{(2\pi)^{D/2} |\boldsymbol{\Sigma}_k|^{1/2}} \exp\left(-\frac{1}{2} (\mathbf{x} - \boldsymbol{\mu}_k)^T \boldsymbol{\Sigma}_k^{-1} (\mathbf{x} - \boldsymbol{\mu}_k)\right) = p(\mathbf{x} | C_k)
+\]
+Igualando $p(\mathbf{x} | C_1) = p(\mathbf{x} | C_2)$
+\[
+\frac{p(C_1 | \mathbf{x})p(\mathbf{x})}{p(C_1)} = \frac{p(C_2 | \mathbf{x})p(\mathbf{x})}{p(C_2)} 
+\]
+
+Ao simplificar, obtemos:
+\[
+p(\mathbf{x} | C_1) = p(\mathbf{x} | C_2)
+\]
+Portanto, igualando a expressão obtida acima e aplicando o logaritmo natural:
+\begin{align*}
+& -\frac{1}{2} (\mathbf{x} - \boldsymbol{\mu}_1)^T \boldsymbol{\Sigma}_1^{-1} (\mathbf{x} - \boldsymbol{\mu}_1) - \frac{1}{2} \ln |\boldsymbol{\Sigma}_1| \\
+&= -\frac{1}{2} (\mathbf{x} - \boldsymbol{\mu}_2)^T \boldsymbol{\Sigma}_2^{-1} (\mathbf{x} - \boldsymbol{\mu}_2) - \frac{1}{2} \ln |\boldsymbol{\Sigma}_2|.
+\end{align*}
+Dividindo por -1/2 e rearranjando, a equação fica:
+\[
+(\mathbf{x} - \boldsymbol{\mu}_1)^T \boldsymbol{\Sigma}_1^{-1} (\mathbf{x} - \boldsymbol{\mu}_1) + \ln |\boldsymbol{\Sigma}_1| = (\mathbf{x} - \boldsymbol{\mu}_2)^T \boldsymbol{\Sigma}_2^{-1} (\mathbf{x} - \boldsymbol{\mu}_2) + \ln |\boldsymbol{\Sigma}_2|.
+\]
+Como $x^T\Sigma^{-1}\mu$ é escalar, $x^T\Sigma^{-1}\mu = (x^T\Sigma^{-1}\mu)^T = \mu ^ T \Sigma ^{-1} x$, expandindo os termos e aplicando essa propriedade, obtemos: 
+\[
+\mathbf{x}^T \boldsymbol{\Sigma}_1^{-1} \mathbf{x} - 2 \boldsymbol{\mu}_1^T \boldsymbol{\Sigma}_1^{-1} \mathbf{x} + \boldsymbol{\mu}_1^T \boldsymbol{\Sigma}_1^{-1} \boldsymbol{\mu}_1 + \ln |\boldsymbol{\Sigma}_1| = \mathbf{x}^T \boldsymbol{\Sigma}_2^{-1} \mathbf{x} - 2 \boldsymbol{\mu}_2^T \boldsymbol{\Sigma}_2^{-1} \mathbf{x} + \boldsymbol{\mu}_2^T \boldsymbol{\Sigma}_2^{-1} \boldsymbol{\mu}_2 + \ln |\boldsymbol{\Sigma}_2|.
+\]
+Reorganizando os termos, obtemos:
+\[
+\mathbf{x}^T (\boldsymbol{\Sigma}_1^{-1} - \boldsymbol{\Sigma}_2^{-1}) \mathbf{x} - 2 (\boldsymbol{\mu}_1^T \boldsymbol{\Sigma}_1^{-1} - \boldsymbol{\mu}_2^T \boldsymbol{\Sigma}_2^{-1}) \mathbf{x} + (\boldsymbol{\mu}_1^T \boldsymbol{\Sigma}_1^{-1} \boldsymbol{\mu}_1 - \boldsymbol{\mu}_2^T \boldsymbol{\Sigma}_2^{-1} \boldsymbol{\mu}_2 + \ln |\boldsymbol{\Sigma}_1| - \ln |\boldsymbol{\Sigma}_2|) = 0.
+\]
+Essa equação tem um formato de $x^TAx + b^Tx+c = 0$ que é uma superfície quadrática.
+
+\subsection*{(b) Efeito da Alteração do Prior com Covariâncias Compartilhadas}
+
+Como os priors são $p(C_1) = \pi$ e $p(C_2) = 1 - \pi$, tomando a condição para a fronteira de decisão $p(\mathbf{x} | C_1) p(C_1) = p(\mathbf{x} | C_2) p(C_2)$ temos que:
+\[
+\mathcal{N}(\mathbf{x} | \boldsymbol{\mu}_1, \boldsymbol{\Sigma}) \pi = \mathcal{N}(\mathbf{x} | \boldsymbol{\mu}_2, \boldsymbol{\Sigma}) (1 - \pi).
+\]
+Aplicando o logaritmo natural nos dois lados:
+\begin{align*}
+& -\frac{1}{2} (\mathbf{x} - \boldsymbol{\mu}_1)^T \boldsymbol{\Sigma}^{-1} (\mathbf{x} - \boldsymbol{\mu}_1) - \frac{1}{2} \ln |\boldsymbol{\Sigma}| + \ln \pi \\
+&= -\frac{1}{2} (\mathbf{x} - \boldsymbol{\mu}_2)^T \boldsymbol{\Sigma}^{-1} (\mathbf{x} - \boldsymbol{\mu}_2) - \frac{1}{2} \ln |\boldsymbol{\Sigma}| + \ln (1 - \pi).
+\end{align*}
+Expandindo os termos, temos:
+\[
+-\frac{1}{2} (\mathbf{x}^T \boldsymbol{\Sigma}^{-1} \mathbf{x} - 2 \boldsymbol{\mu}_1^T \boldsymbol{\Sigma}^{-1} \mathbf{x} + \boldsymbol{\mu}_1^T \boldsymbol{\Sigma}^{-1} \boldsymbol{\mu}_1) + \ln \pi = -\frac{1}{2} (\mathbf{x}^T \boldsymbol{\Sigma}^{-1} \mathbf{x} - 2 \boldsymbol{\mu}_2^T \boldsymbol{\Sigma}^{-1} \mathbf{x} + \boldsymbol{\mu}_2^T \boldsymbol{\Sigma}^{-1} \boldsymbol{\mu}_2) + \ln (1 - \pi).
+\]
+Simplificando e rearranjando, temos:
+\[
+(\boldsymbol{\mu}_1 - \boldsymbol{\mu}_2)^T \boldsymbol{\Sigma}^{-1} \mathbf{x} - \frac{1}{2} (\boldsymbol{\mu}_1^T \boldsymbol{\Sigma}^{-1} \boldsymbol{\mu}_1 - \boldsymbol{\mu}_2^T \boldsymbol{\Sigma}^{-1} \boldsymbol{\mu}_2) + \ln \left(\frac{\pi}{1 - \pi}\right) = 0.
+\]
+Essa expressão tem o formato de uma equação:
+\begin{align*}
+& \omega ^T x + \omega_0 = 0 \\
+& \omega_0 = -\frac{1}{2} (\boldsymbol{\mu}_1^T \boldsymbol{\Sigma}^{-1} \boldsymbol{\mu}_1 - \boldsymbol{\mu}_2^T \boldsymbol{\Sigma}^{-1} \boldsymbol{\mu}_2) + \ln \left(\frac{\pi}{1 - \pi}\right)\\
+& \omega = \boldsymbol{\Sigma}^{-1} (\boldsymbol{\mu}_1 - \boldsymbol{\mu}_2).
+\end{align*}
+$\ln \left(\frac{\pi}{1 - \pi}\right)$ é um deslocamento escalar na equação linear. Alterar o prior $\pi$ resulta no deslocamento paralelo da fronteira de decisão.
+\begin{itemize}
+    \item Se $\pi > 0.5$ ($p(C_1) > p(C_2)$), implica que $\ln \left(\frac{\pi}{1 - \pi}\right) > 0$. Para satisfazer a equação, $(\boldsymbol{\mu}_1 - \boldsymbol{\mu}_2)^T \boldsymbol{\Sigma}^{-1} \mathbf{x}$ precisa ser menor, fazendo com que a fronteira se expanda para a região de $C_1$.
+    \item Se $\pi < 0.5$ (ou seja, $p(C_1) < p(C_2)$), então $\ln \left(\frac{\pi}{1 - \pi}\right) < 0$, e a fronteira se desloca na direção oposta, expandindo a região de $C_2$.
+    \item Se $\pi = 0.5$, o termo logarítmico é zero, e a fronteira não se desloca para nenhum dos lados, sendo definida pelas médias e covariância.
+\end{itemize}
+
+\subsection*{(c) Uso da Distância de Mahalanobis para Classificação:}
+A distância de Mahalanobis pode ser usada para classificação comparando a distância de um ponto \(\mathbf{x}\) para os centros das classes (\(\boldsymbol{\mu}_1\) e \(\boldsymbol{\mu}_2\)), ponderadas pelas suas respectivas matrizes de covariância. A regra de classificação seria classificar \(\mathbf{x}\) como pertencente à classe \(C_1\) para a qual a distância de Mahalanobis quadrática \(\Delta_1^2\) é mínima. Ou seja:
+\begin{itemize}
+    \item Se \(\Delta_1^2 \leqslant \Delta_2^2\), classificar \(\mathbf{x}\) como \(C_1\) (Normal).
+    \item Se \(\Delta_1^2 > \Delta_2^2\), classificar \(\mathbf{x}\) como \(C_2\) (Fraude).
+\end{itemize}
+
+Premissas Implícitas:
+\begin{itemize}
+    \item As classes devem seguir uma distribuição Gaussiana multivariada. 
+    \item Os parâmetros $\boldsymbol{\mu}_1, \boldsymbol{\Sigma}_1, \boldsymbol{\mu}_2, \boldsymbol{\Sigma}_2$ são conhecidos ou foram bem estimados.
+    \item Priors iguais para as classes \(p(C_1) = p(C_2)\).
+\end{itemize}
 
 \subsection{Exercício 2: Verossimilhança, entropia cruzada e regressão logística}
 \label{subsec:ex2}
+\section*{(a) Mostrar que maximizar a função de verossimilhança é equivalente a minimizar a entropia cruzada.}
+Para um modelo de regressão logística com alvos binários:
+\[
+p(\mathbf{t} | \mathbf{w}) = \prod_{n=1}^{N} y_n^{t_n} (1 - y_n)^{1 - t_n}
+\]
+Sabendo que maximizar a função é o mesmo que maximizar o logaritmo natural, podemos aplicar o logaritmo natural para que a função se pareça mais com o nosso objetivo:
+\[
+\ln p(\mathbf{t} | \mathbf{w}) = \sum_{n=1}^{N} \ln \left( y_n^{t_n} (1 - y_n)^{1 - t_n} \right).
+\]
+Usando as propriedades do logaritmo:
+\[
+\ln p(\mathbf{t} | \mathbf{w}) = \sum_{n=1}^{N} \left[ t_n \ln y_n + (1 - t_n) \ln(1 - y_n) \right].
+\]
+A função de erro de entropia cruzada é definida por:
+\[
+E(\mathbf{w}) = -\sum_{n=1}^{N} \left[ t_n \ln y_n + (1 - t_n) \ln(1 - y_n) \right].
+\]
+Comparando as duas equações, vemos que $E(\mathbf{w}) = -\ln p(\mathbf{t} | \mathbf{w})$. Portanto, maximizar a verossimilhança é equivalente a minimizar a entropia cruzada.
+
+\section*{(b) Derivando $\nabla E(\mathbf{w})$}
+Lembrando que $y_n = \sigma(\mathbf{a}_n)$, com $\mathbf{a}_n = \mathbf{w}^T \boldsymbol{\phi}_n$, e que
+\[
+\frac{d\sigma(a)}{da} = \sigma(a)(1 - \sigma(a)),
+\]
+a função de erro é:
+\[
+E(\mathbf{w}) = -\sum_{n=1}^{N} \left[ t_n \ln \sigma(\mathbf{w}^T \boldsymbol{\phi}_n) + (1 - t_n) \ln(1 - \sigma(\mathbf{w}^T \boldsymbol{\phi}_n)) \right].
+\]
+O gradiente de $E(\mathbf{w})$ é:
+\begin{align*}
+\nabla E(\mathbf{w}) &= -\sum_{n=1}^{N} \left[ t_n \frac{1}{y_n} y_n (1 - y_n) \boldsymbol{\phi}_n + (1 - t_n) \frac{1}{1 - y_n} (-y_n (1 - y_n)) \boldsymbol{\phi}_n \right] \\
+&= -\sum_{n=1}^{N} \left[ t_n (1 - y_n) - (1 - t_n) y_n \right] \boldsymbol{\phi}_n \\
+&= \sum_{n=1}^{N} (y_n - t_n) \boldsymbol{\phi}_n.
+\end{align*}
+
+\section*{(c) Explicação do problema de overfitting}
+O overfitting ocorre quando os dados são linearmente separáveis. Nesse caso, existe um $\mathbf{w}$ tal que $\mathbf{w}^T \boldsymbol{\phi}_n$ separa perfeitamente as classes, fazendo com que $\|\mathbf{w}\| \to \infty$.
+
+Para evitar isso, usa-se regularização $L_2$:
+\[
+E_{\text{regularizado}}(\mathbf{w}) = -\sum_{n=1}^{N} \left[ t_n \ln y_n + (1 - t_n) \ln(1 - y_n) \right] + \frac{\lambda}{2} \|\mathbf{w}\|^2,
+\]
+O termo $\frac{\lambda}{2} \|\mathbf{w}\|^2$ penaliza pesos grandes, fazendo com que o modelo faça um overfitting.
 
 \subsection{Exercício 3: Decomposição viés-variância}
 \label{subsec:ex3}
-
+\subsection*{(a) Explicação $(bias) ^ 2$ , variance e noise}
+\paragraph{$Bias ^ 2$}
+O viés quadrático mede o erro sistemático do modelo, ou seja, o quanto em média o modelo se difere do valor real. Um modelo com um viés alto não consegue entender a complexidade dos dados, levando a um underfitting.
+\paragraph{Variance}
+A variância mede o quanto as nossas predições pra um dado ponto variam usando diferentes conjuntos de treino. Um modelo que tem alta variância é muito sensível às variações nos dados de treino, fazendo com que o modelo não consiga performar bem em dados que ele não conhece, levando a um overfitting.
+\paragraph{Noise}
+O ruído é a parte do erro que não é possível de ser reduzida, pois ele é uma característica inerente aos dados.
+\subsection*{(b) Explicação $(bias) ^ 2$ , variance e noise}
 \subsection{Exercício 4: Avaliação em dados desbalanceados}
-\label{subsec:ex4}
 
-%----------------------------------------
+\subsection*{(a) Acurácia padrão em datasets desbalanceados}
+Em dados desbalanceados, a acurácia padrão pode dar uma falsa sensação que um modelo está muito bom. Já que um classificador simples que sempre classifica as transações como a classe majoritária pode ter uma alta acurácia pois ele irá classificar corretamente na grande maioria das vezes. Isso acontence porque a acurácia é definida como:
+\[
+\text{Acurácia} \;=\;
+\frac{\text{TP} + \text{TN}}{\text{TP} + \text{TN} + \text{FP} + \text{FN}}
+\]
+Em datasets desbalanceados, a classe majoritária tem um peso muito grande sobre essa métrica. Sendo assim, o classificador não cumpriria seu objetivo que é identificar fraudes, porém  ainda sim teria uma acurácia alta.
+
+\subsection*{(b) Precisão, Recall e F1-Score}
+
+\begin{description}
+  \item[Precision] 
+    Parcela das transações classificadas como fraude e que de fato são fraude:
+    \[
+      \text{Precision} \;=\;
+      \frac{\text{TP}}{\text{TP} + \text{FP}}
+    \]
+    Em que:
+    \begin{itemize}
+      \item TP: quantidade de fraudes classificadas corretamente.
+      \item FP: quantidade de transações normais classificadas como fraude.
+    \end{itemize}
+
+  \item[Recall]
+    Parcela de todas as transações que de fato eram fraudes que foram classificadas corretamente:
+    \[
+      \text{Recall} \;=\;
+      \frac{\text{TP}}{\text{TP} + \text{FN}}
+    \]
+    Em que:
+    \begin{itemize}
+      \item FN: quantidade de fraudes que foram classificadas como transações normais.
+    \end{itemize}
+
+  \item[F1-Score (\(F_1\))]
+    Média harmônica entre precisão e recall:
+    \[
+      F_1 \;=\;
+      2 \,\frac{\text{Precision}\,\times\,\text{Recall}}
+             {\text{Precision} + \text{Recall}}
+    \]
+\end{description}
+
+\paragraph{Quando priorizar Recall sobre Precisão}
+\begin{itemize}
+  \item Em situações em que perder uma fraude gera prejuízo financeiro para a empresa que utiliza o classificador ou em cenários em que uma classificação errada pode gerar muito prejuízo para o utilizador, como em resultado de doenças.
+\end{itemize}
+
+\paragraph{Quando priorizar Precisão sobre Recall}
+\begin{itemize}
+  \item Quando o custo de falsos positivos é alto, seja por implicar em esforço manual, gerar insatisfação ou diminuir a confiança do cliente nos serviços oferecidos pela empresa que se utiliza do classificador. Além disso, para que a precisão tenha mais relevância que o recall, é necessário que o impacto de um falso negativo não seja tão alto para o negócio. Por exemplo, em um sistema de identificação de câncer, um falso negativo poderia levar a um diagnóstico mais tardio da doença.
+\end{itemize}
+
+\subsection*{(c) Curva Precisão–Recall e AUC–PR}
+
+O procedimento para calcular a curva PR seria:
+
+\begin{enumerate}
+  \item Ordenar todos os exemplos em ordem decrescente dos seus scores \(s_n\).
+  \item Para cada limiar \(\tau\):
+    \begin{itemize}
+      \item Classificar \(x_n\) como fraude se \(s_n \ge \tau\), caso contrário, classificar como normal.
+      \item Calcular
+    \[
+        \text{Precision}(\tau)
+        = \frac{\#\{n : s_n \ge \tau,\; t_n=1\}}
+               {\#\{n : s_n \ge \tau\}},
+        \quad
+        \text{Recall}(\tau)
+        = \frac{\#\{n : s_n \ge \tau,\; t_n=1\}}
+               {\#\{n : t_n=1\}}.
+      \]
+    \end{itemize}
+  \item Plotar cada ponto do par ($Recall(\tau)$ , $Precision(\tau)$) e formar a curva.
+\end{enumerate}
+
+A área Sob a Curva PR é dada por
+\[
+  \mathrm{AUC\text{-}PR}
+  = \int_{0}^{1} \! \text{Precision}(r)\,\mathrm{d}r,
+\]
+em que \(\text{Precision}(r)\) é a precisão correspondente ao recall \(r\).
+
+\paragraph{Por que AUC–PR é preferível à ROC em cenários muito desbalanceados}
+  A curva ROC avalia a taxa de verdadeiros positivos e falsos positivos, em casos desbalanceados a taxa de falsos positivo
+  \[
+  FPR = \frac{FP}{FP + TN}
+  \]
+  Permanece baixa pois a quantidade de verdadeiro negativos é muito alta, então essa métrica mascara um modelo ruim. Enquanto a AUC-PR avalia diretamente os dados de fraude, ou seja, não temos um denominador muito alto que mascara o valor da métrica. 
+
+
 \section{Referências}
 \label{sec:referencias}
 % Exemplo de uso de BibTeX:
