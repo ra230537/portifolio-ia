@@ -1,5 +1,5 @@
 # Fdb version 4
-["pdflatex"] 1747272710.58137 "c:/Users/Julio Vinicius/Documents/Códigos/Portifolio/Avaliação de crédito/relatorio/relatorio_final/relatorio.tex" "relatorio.pdf" "relatorio" 1747272711.79728 0
+["pdflatex"] 1747272398.61466 "c:/Users/Julio Vinicius/Documents/Códigos/Portifolio/Avaliação de crédito/relatorio/relatorio_final/relatorio copy.tex" "relatorio copy.pdf" "relatorio copy" 1747272399.88628 0
   "../output/MSE.png" 1747264278 50984 05869bf961c85463e1f24966184d4c3c ""
   "../output/distribuicao scores lgbm.png" 1746929735 19403 60569772214977bf992a6575e4c3d13e ""
   "../output/matriz confusao lgbm.png" 1746929400 18385 c6b5e2a20b83f65cae4cd7382d83d420 ""
@@ -180,13 +180,13 @@
   "C:/Users/Julio Vinicius/AppData/Local/Programs/MiKTeX/tex/latex/rerunfilecheck/rerunfilecheck.sty" 1657800696 9714 ba3194bd52c8499b3f1e3eb91d409670 ""
   "C:/Users/Julio Vinicius/AppData/Local/Programs/MiKTeX/tex/latex/url/url.sty" 1388490452 12796 8edb7d69a20b857904dd0ea757c14ec9 ""
   "C:/Users/Julio Vinicius/AppData/Local/Programs/MiKTeX/tex/latex/xcolor/xcolor.sty" 1700127522 55487 80a65caedd3722f4c20a14a69e785d8f ""
-  "c:/Users/Julio Vinicius/Documents/Códigos/Portifolio/Avaliação de crédito/relatorio/relatorio_final/relatorio.tex" 1747272710 28822 fda858f2d6515e83a814542c7dfd6155 ""
-  "relatorio.aux" 1747272711 9337 f05c7f16ac02b248b189d3f1ef189516 "pdflatex"
-  "relatorio.out" 1747272711 6869 9dbf1d1027a78aa61a09eb14d0284e42 "pdflatex"
-  "relatorio.tex" 1747272710 28822 fda858f2d6515e83a814542c7dfd6155 ""
+  "c:/Users/Julio Vinicius/Documents/Códigos/Portifolio/Avaliação de crédito/relatorio/relatorio_final/relatorio copy.tex" 1747272170 30714 a5b06bc5b98131ff47825846ff7f27c2 ""
+  "relatorio copy.aux" 1747272399 9337 52b346b1abc64c6156952400d6896efe "pdflatex"
+  "relatorio copy.out" 1747272399 6869 9dbf1d1027a78aa61a09eb14d0284e42 "pdflatex"
+  "relatorio copy.tex" 1747272170 30714 a5b06bc5b98131ff47825846ff7f27c2 ""
   (generated)
-  "relatorio.aux"
-  "relatorio.log"
-  "relatorio.out"
-  "relatorio.pdf"
+  "relatorio copy.aux"
+  "relatorio copy.log"
+  "relatorio copy.out"
+  "relatorio copy.pdf"
   (rewritten before read)

@@ -43,7 +43,7 @@ O objetivo do trabalho é aplicar técnicas básicas de aprendizado supervisiona
 %----------------------------------------
 \section{Introdução}
 \label{sec:introducao}
-  O dataset utilizado é o Credit Card Fraud Detection. Ele possui transações realizadas com cartões de crédito em setembro de 2013. O conjunto de dados possui a maioria das features anonimizadas, com exceção de algumas variáveis como: tempo, valor da transação e a variável que indica se a transação é fraude ou não. Uma característica bem importante desse datasete é que ele é muito desbalanceado, com apenas 0.173\% das transações sendo fraudes. 
+  O dataset utilizado é o Credit Card Fraud Detection. Ele possui transações realizadas com cartões de crédito em setembro de 2013. O conjunto de dados possui a maioria das features anonimizadas, com exceção de algumas variáveis como: tempo, valor da transação e a variável que indica se a transação é fraude ou não. Uma característica bem importante desse datasete é que ele é muito desbalanceado, com apenas 0.172\% das transações sendo fraudes. 
 
 %----------------------------------------
 \section{Metodologia (Parte 1)}
@@ -243,7 +243,17 @@ Portanto, igualando a expressão obtida acima e aplicando o logaritmo natural:
 & -\frac{1}{2} (\mathbf{x} - \boldsymbol{\mu}_1)^T \boldsymbol{\Sigma}_1^{-1} (\mathbf{x} - \boldsymbol{\mu}_1) - \frac{1}{2} \ln |\boldsymbol{\Sigma}_1| \\
 &= -\frac{1}{2} (\mathbf{x} - \boldsymbol{\mu}_2)^T \boldsymbol{\Sigma}_2^{-1} (\mathbf{x} - \boldsymbol{\mu}_2) - \frac{1}{2} \ln |\boldsymbol{\Sigma}_2|
 \end{align*}
-Desenvolvendo temos:
+Dividindo por -1/2 e rearranjando, a equação fica:
+\begin{multline*}
+(\mathbf{x} - \boldsymbol{\mu}_1)^T \boldsymbol{\Sigma}_1^{-1} (\mathbf{x} - \boldsymbol{\mu}_1) + \ln |\boldsymbol{\Sigma}_1| \\
+= (\mathbf{x} - \boldsymbol{\mu}_2)^T \boldsymbol{\Sigma}_2^{-1} (\mathbf{x} - \boldsymbol{\mu}_2) + \ln |\boldsymbol{\Sigma}_2|.
+\end{multline*}
+Como $x^T\Sigma^{-1}\mu$ é escalar, $x^T\Sigma^{-1}\mu = (x^T\Sigma^{-1}\mu)^T = \mu ^ T \Sigma ^{-1} x$, expandindo os termos e aplicando essa propriedade, temos: 
+\begin{multline*}
+\mathbf{x}^T \boldsymbol{\Sigma}_1^{-1} \mathbf{x} - 2 \boldsymbol{\mu}_1^T \boldsymbol{\Sigma}_1^{-1} \mathbf{x} + \boldsymbol{\mu}_1^T \boldsymbol{\Sigma}_1^{-1} \boldsymbol{\mu}_1 + \ln |\boldsymbol{\Sigma}_1| \\
+= \mathbf{x}^T \boldsymbol{\Sigma}_2^{-1} \mathbf{x} - 2 \boldsymbol{\mu}_2^T \boldsymbol{\Sigma}_2^{-1} \mathbf{x} + \boldsymbol{\mu}_2^T \boldsymbol{\Sigma}_2^{-1} \boldsymbol{\mu}_2 + \ln |\boldsymbol{\Sigma}_2|.
+\end{multline*}
+Reorganizando os termos, temos:
 \begin{multline*}
 \mathbf{x}^T (\boldsymbol{\Sigma}_1^{-1} - \boldsymbol{\Sigma}_2^{-1}) \mathbf{x} - 2 (\boldsymbol{\mu}_1^T \boldsymbol{\Sigma}_1^{-1} - \boldsymbol{\mu}_2^T \boldsymbol{\Sigma}_2^{-1}) \mathbf{x} \\
 + \left(\boldsymbol{\mu}_1^T \boldsymbol{\Sigma}_1^{-1} \boldsymbol{\mu}_1 - \boldsymbol{\mu}_2^T \boldsymbol{\Sigma}_2^{-1} \boldsymbol{\mu}_2 + \ln |\boldsymbol{\Sigma}_1| - \ln |\boldsymbol{\Sigma}_2|\right) = 0.
@@ -256,7 +266,19 @@ Como os priors são $p(C_1) = \pi$ e $p(C_2) = 1 - \pi$, tomando a condição pa
 \[
 \mathcal{N}(\mathbf{x} | \boldsymbol{\mu}_1, \boldsymbol{\Sigma}) \pi = \mathcal{N}(\mathbf{x} | \boldsymbol{\mu}_2, \boldsymbol{\Sigma}) (1 - \pi).
 \]
-Aplicando o logaritmo natural e simplificando:
+Aplicando o logaritmo natural nos dois lados:
+\begin{align*}
+& -\frac{1}{2} (\mathbf{x} - \boldsymbol{\mu}_1)^T \boldsymbol{\Sigma}^{-1} (\mathbf{x} - \boldsymbol{\mu}_1) - \frac{1}{2} \ln |\boldsymbol{\Sigma}| + \ln \pi \\
+&= -\frac{1}{2} (\mathbf{x} - \boldsymbol{\mu}_2)^T \boldsymbol{\Sigma}^{-1} (\mathbf{x} - \boldsymbol{\mu}_2) - \frac{1}{2} \ln |\boldsymbol{\Sigma}|\\
+& + \ln (1 - \pi).
+\end{align*}
+Expandindo os termos, temos:
+\begin{align*}
+& -\frac{1}{2} (\mathbf{x}^T \boldsymbol{\Sigma}^{-1} \mathbf{x} - 2 \boldsymbol{\mu}_1^T \boldsymbol{\Sigma}^{-1} \mathbf{x} + \boldsymbol{\mu}_1^T \boldsymbol{\Sigma}^{-1} \boldsymbol{\mu}_1) + \ln \pi \\
+& = -\frac{1}{2} (\mathbf{x}^T \boldsymbol{\Sigma}^{-1} \mathbf{x} - 2 \boldsymbol{\mu}_2^T \boldsymbol{\Sigma}^{-1} \mathbf{x} + \boldsymbol{\mu}_2^T \boldsymbol{\Sigma}^{-1} \boldsymbol{\mu}_2) \\
+& + \ln (1 - \pi)
+\end{align*}
+Simplificando e rearranjando, temos:
 \begin{align*}
 &  (\boldsymbol{\mu}_1 - \boldsymbol{\mu}_2)^T \boldsymbol{\Sigma}^{-1} \mathbf{x} - \frac{1}{2} (\boldsymbol{\mu}_1^T \boldsymbol{\Sigma}^{-1} \boldsymbol{\mu}_1 - \boldsymbol{\mu}_2^T \boldsymbol{\Sigma}^{-1} \boldsymbol{\mu}_2) \\
 & + \ln \left(\frac{\pi}{1 - \pi}\right) = 0.

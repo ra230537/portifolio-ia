@@ -1,10 +1,10 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.25 (MiKTeX 24.1) (preloaded format=pdflatex 2025.4.7)  14 MAY 2025 22:31
+This is pdfTeX, Version 3.141592653-2.6-1.40.25 (MiKTeX 24.1) (preloaded format=pdflatex 2025.4.7)  14 MAY 2025 22:26
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
  %&-line parsing enabled.
-**"c:/Users/Julio Vinicius/Documents/Códigos/Portifolio/Avaliação de crédito/relatorio/relatorio_final/relatorio.tex"
-(c:/Users/Julio Vinicius/Documents/Códigos/Portifolio/Avaliação de crédito/relatorio/relatorio_final/relatorio.tex
+**"c:/Users/Julio Vinicius/Documents/Códigos/Portifolio/Avaliação de crédito/relatorio/relatorio_final/relatorio copy.tex"
+(c:/Users/Julio Vinicius/Documents/Códigos/Portifolio/Avaliação de crédito/relatorio/relatorio_final/relatorio copy.tex
 LaTeX2e <2023-11-01> patch level 1
 L3 programming layer <2024-01-04>
 (C:\Users\Julio Vinicius\AppData\Local\Programs\MiKTeX\tex/latex/ieeetran\IEEEtran.cls
@@ -498,8 +498,8 @@ File: t1lmr.fd 2015/05/01 v1.6.1 Font defs for Latin Modern
 File: l3backend-pdftex.def 2024-01-04 L3 backend support: PDF output (pdfTeX)
 \l__color_backend_stack_int=\count316
 \l__pdf_internal_box=\box60
-) (relatorio.aux)
-\openout1 = `relatorio.aux'.
+) (relatorio copy.aux)
+\openout1 = `"relatorio copy.aux"'.
 
 LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 25.
 LaTeX Font Info:    ... okay on input line 25.
@@ -522,9 +522,9 @@ LaTeX Font Info:    ... okay on input line 25.
 
 -- Lines per column: 46 (approximate, difference = 4.47656pt).
 Package hyperref Info: Link coloring OFF on input line 25.
-(relatorio.out) (relatorio.out)
+(relatorio copy.out) (relatorio copy.out)
 \@outlinefile=\write3
-\openout3 = `relatorio.out'.
+\openout3 = `"relatorio copy.out"'.
 
  (C:\Users\Julio Vinicius\AppData\Local\Programs\MiKTeX\tex/context/base/mkii\supp-pdf.mkii
 [Loading MPS to PDF converter (version 2006.09.02).]
@@ -751,92 +751,89 @@ Overfull \hbox (32.36278pt too wide) detected at line 231
  []
 
 
-Overfull \hbox (20.52945pt too wide) detected at line 250
+Underfull \hbox (badness 10000) in paragraph at lines 250--252
+\T1/lmr/m/n/10 (+20) Como $\OML/lmm/m/it/10 x[]\OT1/lmr/m/n/10 (+20) ^^F[]\OML/lmm/m/it/10 ^^V$ \T1/lmr/m/n/10 (+20) � es-ca-lar, $\OML/lmm/m/it/10 x[]\OT1/lmr/m/n/10 (+20) ^^F[]\OML/lmm/m/it/10 ^^V \OT1/lmr/m/n/10 (+20) =
+ []
+
+
+Overfull \hbox (20.52945pt too wide) detected at line 260
  []$[] \OT1/lmr/m/n/10 + [] = 0\OML/lmm/m/it/10 :  $ 
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 250--252
-\T1/lmr/m/n/10 (+20) Essa equa-��o tem um for-mato de
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 250--252
-
  []
 
 [4
 pdfTeX warning (ext4): destination with the same identifier (name{figure.5}) has been already used, duplicate ignored
 <argument> ...shipout:D \box_use:N \l_shipout_box 
                                                   \__shipout_drop_firstpage_...
-l.258 \]
-        {C:/Users/Julio Vinicius/AppData/Local/Programs/MiKTeX/fonts/enc/dvips/lm/lm-mathex.enc} <../output/distribuicao scores lgbm.png>]
-Overfull \hbox (0.88744pt too wide) detected at line 269
-[]
+l.260 \end{multline*}
+                     {C:/Users/Julio Vinicius/AppData/Local/Programs/MiKTeX/fonts/enc/dvips/lm/lm-mathex.enc} <../output/distribuicao scores lgbm.png>]
+Underfull \hbox (badness 10000) in paragraph at lines 260--262
+\T1/lmr/m/n/10 (+20) Essa equa-��o tem um for-mato de
  []
 
 
-Underfull \hbox (badness 1845) in paragraph at lines 309--311
+Underfull \hbox (badness 10000) in paragraph at lines 260--262
+
+ []
+
+
+Overfull \hbox (0.88744pt too wide) detected at line 291
+[]
+ []
+
+[5]
+Underfull \hbox (badness 1845) in paragraph at lines 331--333
 \T1/lmr/m/n/10 (+20) Comparando as duas equa-��es, ve-mos que
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 309--311
+Underfull \hbox (badness 10000) in paragraph at lines 331--333
 
  []
 
-[5]
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `math shift' on input line 344.
-
-
-Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `superscript' on input line 344.
+(hyperref)                removing `math shift' on input line 366.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `math shift' on input line 344.
+(hyperref)                removing `superscript' on input line 366.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `math shift' on input line 366.
 
 <../output/MSE.png, id=170, 1293.633pt x 335.3328pt>
 File: ../output/MSE.png Graphic file (type png)
 <use ../output/MSE.png>
-Package pdftex.def Info: ../output/MSE.png  used on input line 354.
+Package pdftex.def Info: ../output/MSE.png  used on input line 376.
 (pdftex.def)             Requested size: 209.0023pt x 54.17624pt.
-<../output/vies-variancia.png, id=171, 451.6875pt x 338.2236pt>
-File: ../output/vies-variancia.png Graphic file (type png)
-<use ../output/vies-variancia.png>
-Package pdftex.def Info: ../output/vies-variancia.png  used on input line 362.
-(pdftex.def)             Requested size: 209.0023pt x 156.50337pt.
-
-Underfull \vbox (badness 10000) has occurred while \output is active []
-
- [6
+[6
 pdfTeX warning (ext4): destination with the same identifier (name{figure.6}) has been already used, duplicate ignored
 <argument> ...shipout:D \box_use:N \l_shipout_box 
                                                   \__shipout_drop_firstpage_...
-l.366 P
-       odemos ver que o viés diminui quando a complexidade do modelo aument... <../output/MSE.png>]
-Underfull \hbox (badness 10000) in paragraph at lines 414--415
+l.381 \subsubsection
+                    *{Avaliação de viés e variância} <../output/MSE.png>]
+<../output/vies-variancia.png, id=181, 451.6875pt x 338.2236pt>
+File: ../output/vies-variancia.png Graphic file (type png)
+<use ../output/vies-variancia.png>
+Package pdftex.def Info: ../output/vies-variancia.png  used on input line 384.
+(pdftex.def)             Requested size: 209.0023pt x 156.50337pt.
 
- []
+Underfull \hbox (badness 10000) in paragraph at lines 436--437
 
-
-Overfull \hbox (0.6339pt too wide) detected at line 433
-[]
  []
 
 [7
 pdfTeX warning (ext4): destination with the same identifier (name{figure.7}) has been already used, duplicate ignored
 <argument> ...shipout:D \box_use:N \l_shipout_box 
                                                   \__shipout_drop_firstpage_...
-l.433     \end{align*}
-                       <../output/vies-variancia.png>]
-** WARNING: Ignoring useless \section in Appendix (line 461).
+l.437 
+       <../output/vies-variancia.png>]
+Overfull \hbox (0.6339pt too wide) detected at line 455
+[]
+ []
 
-Underfull \vbox (badness 3058) has occurred while \output is active []
-
-
+** WARNING: Ignoring useless \section in Appendix (line 483).
 
 ** Conference Paper **
 Before submitting the final camera ready copy, remember to:
@@ -852,25 +849,25 @@ Before submitting the final camera ready copy, remember to:
 pdfTeX warning (ext4): destination with the same identifier (name{table.7}) has been already used, duplicate ignored
 <argument> ...shipout:D \box_use:N \l_shipout_box 
                                                   \__shipout_drop_firstpage_...
-l.506 \end{document}
-                    ] (relatorio.aux)
+l.528 \end{document}
+                    ] (relatorio copy.aux)
  ***********
 LaTeX2e <2023-11-01> patch level 1
 L3 programming layer <2024-01-04>
  ***********
-Package rerunfilecheck Info: File `relatorio.out' has not changed.
+Package rerunfilecheck Info: File `"relatorio copy".out' has not changed.
 (rerunfilecheck)             Checksum: 9DBF1D1027A78AA61A09EB14D0284E42;6869.
  ) 
 Here is how much of TeX's memory you used:
- 17023 strings out of 474486
- 276603 string characters out of 5739472
- 1947542 words of memory out of 5000000
- 38768 multiletter control sequences out of 15000+600000
- 778737 words of font info for 262 fonts, out of 8000000 for 9000
+ 17027 strings out of 474486
+ 276791 string characters out of 5739472
+ 1953542 words of memory out of 5000000
+ 38770 multiletter control sequences out of 15000+600000
+ 778820 words of font info for 263 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 75i,12n,79p,1776b,683s stack positions out of 10000i,1000n,20000p,200000b,200000s
+ 75i,12n,79p,1781b,495s stack positions out of 10000i,1000n,20000p,200000b,200000s
 <C:/Users/Julio Vinicius/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmbx10.pfb><C:/Users/Julio Vinicius/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmbx8.pfb><C:/Users/Julio Vinicius/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmbx9.pfb><C:/Users/Julio Vinicius/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmbxi10.pfb><C:/Users/Julio Vinicius/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmcsc10.pfb><C:/Users/Julio Vinicius/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmex10.pfb><C:/Users/Julio Vinicius/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmmi10.pfb><C:/Users/Julio Vinicius/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmmi5.pfb><C:/Users/Julio Vinicius/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmmi7.pfb><C:/Users/Julio Vinicius/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmmib10.pfb><C:/Users/Julio Vinicius/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmr10.pfb><C:/Users/Julio Vinicius/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmr12.pfb><C:/Users/Julio Vinicius/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmr17.pfb><C:/Users/Julio Vinicius/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmr7.pfb><C:/Users/Julio Vinicius/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmr8.pfb><C:/Users/Julio Vinicius/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmri10.pfb><C:/Users/Julio Vinicius/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmri8.pfb><C:/Users/Julio Vinicius/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmsy10.pfb><C:/Users/Julio Vinicius/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmsy7.pfb><C:/Users/Julio Vinicius/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmtt10.pfb><C:/Users/Julio Vinicius/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/symbols/msam10.pfb>
-Output written on relatorio.pdf (8 pages, 607214 bytes).
+Output written on "relatorio copy.pdf" (8 pages, 608685 bytes).
 PDF statistics:
  322 PDF objects out of 1000 (max. 8388607)
  65 named destinations out of 1000 (max. 500000)

@@ -1,7 +1,7 @@
 PWD c:\Users\Julio Vinicius\Documents\Códigos\Portifolio\Avaliação de crédito\relatorio\relatorio_final
 INPUT C:\Users\Julio Vinicius\AppData\Local\MiKTeX\miktex\data\le\pdftex\pdflatex.fmt
-INPUT c:\Users\Julio Vinicius\Documents\Códigos\Portifolio\Avaliação de crédito\relatorio\relatorio_final\relatorio.tex
-OUTPUT relatorio.log
+INPUT c:\Users\Julio Vinicius\Documents\Códigos\Portifolio\Avaliação de crédito\relatorio\relatorio_final\relatorio copy.tex
+OUTPUT relatorio copy.log
 INPUT C:\Users\Julio Vinicius\AppData\Local\Programs\MiKTeX\tex\latex\ieeetran\IEEEtran.cls
 INPUT C:\Users\Julio Vinicius\AppData\Local\Programs\MiKTeX\tex\latex\ieeetran\IEEEtran.cls
 INPUT C:\Users\Julio Vinicius\AppData\Local\Programs\MiKTeX\tex\latex\psnfss\ot1ptm.fd
@@ -202,10 +202,10 @@ INPUT C:\Users\Julio Vinicius\AppData\Local\Programs\MiKTeX\tex\latex\lm\t1lmr.f
 INPUT C:\Users\Julio Vinicius\AppData\Local\Programs\MiKTeX\fonts\tfm\public\lm\ec-lmr10.tfm
 INPUT C:\Users\Julio Vinicius\AppData\Local\Programs\MiKTeX\tex\latex\l3backend\l3backend-pdftex.def
 INPUT C:\Users\Julio Vinicius\AppData\Local\Programs\MiKTeX\tex\latex\l3backend\l3backend-pdftex.def
-INPUT .\relatorio.aux
-INPUT .\relatorio.aux
-INPUT relatorio.aux
-OUTPUT relatorio.aux
+INPUT .\relatorio copy.aux
+INPUT .\relatorio copy.aux
+INPUT relatorio copy.aux
+OUTPUT relatorio copy.aux
 INPUT C:\Users\Julio Vinicius\AppData\Local\Programs\MiKTeX\fonts\tfm\public\lm\ec-lmr5.tfm
 INPUT C:\Users\Julio Vinicius\AppData\Local\Programs\MiKTeX\fonts\tfm\public\lm\ec-lmbx5.tfm
 INPUT C:\Users\Julio Vinicius\AppData\Local\Programs\MiKTeX\fonts\tfm\public\lm\ec-lmri7.tfm
@@ -245,14 +245,14 @@ INPUT C:\Users\Julio Vinicius\AppData\Local\Programs\MiKTeX\fonts\tfm\public\lm\
 INPUT C:\Users\Julio Vinicius\AppData\Local\Programs\MiKTeX\fonts\tfm\public\lm\ec-lmbx12.tfm
 INPUT C:\Users\Julio Vinicius\AppData\Local\Programs\MiKTeX\fonts\tfm\public\lm\ec-lmri12.tfm
 INPUT C:\Users\Julio Vinicius\AppData\Local\Programs\MiKTeX\fonts\tfm\public\lm\ec-lmbxi10.tfm
-INPUT .\relatorio.out
-INPUT .\relatorio.out
-INPUT relatorio.out
-INPUT relatorio.out
-OUTPUT relatorio.pdf
-INPUT .\relatorio.out
-INPUT .\relatorio.out
-OUTPUT relatorio.out
+INPUT .\relatorio copy.out
+INPUT .\relatorio copy.out
+INPUT relatorio copy.out
+INPUT relatorio copy.out
+OUTPUT relatorio copy.pdf
+INPUT .\relatorio copy.out
+INPUT .\relatorio copy.out
+OUTPUT relatorio copy.out
 INPUT C:\Users\Julio Vinicius\AppData\Local\Programs\MiKTeX\tex\context\base\mkii\supp-pdf.mkii
 INPUT C:\Users\Julio Vinicius\AppData\Local\Programs\MiKTeX\tex\context\base\mkii\supp-pdf.mkii
 INPUT C:\Users\Julio Vinicius\AppData\Local\Programs\MiKTeX\tex\context\base\mkii\supp-pdf.mkii
@@ -393,9 +393,9 @@ INPUT ..\output\vies-variancia.png
 INPUT ..\output\vies-variancia.png
 INPUT C:\Users\Julio Vinicius\AppData\Local\Programs\MiKTeX\fonts\tfm\public\lm\rm-lmbx8.tfm
 INPUT C:\Users\Julio Vinicius\AppData\Local\Programs\MiKTeX\fonts\tfm\public\lm\rm-lmbx6.tfm
-INPUT relatorio.aux
-INPUT .\relatorio.out
-INPUT .\relatorio.out
+INPUT relatorio copy.aux
+INPUT .\relatorio copy.out
+INPUT .\relatorio copy.out
 INPUT C:\Users\Julio Vinicius\AppData\Local\Programs\MiKTeX\fonts\type1\public\lm\lmbx10.pfb
 INPUT C:\Users\Julio Vinicius\AppData\Local\Programs\MiKTeX\fonts\type1\public\lm\lmbx10.pfb
 INPUT C:\Users\Julio Vinicius\AppData\Local\Programs\MiKTeX\fonts\type1\public\lm\lmbx8.pfb
